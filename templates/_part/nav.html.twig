@@ -1,19 +1,24 @@
-{% set menus = ["Accueil", "Mécanique", "Carrosserie", "Occasion"] %}
+{% set menus = 
+[
+  {name : 'Accueil', href : 'path="/"'},
+  {name : 'Mécanique', href : 'href="/"'}, 
+  {name : 'Carrosserie', href : 'href="/"'}, 
+  {name : 'Occasion', href : 'href="/"'}
+]
+   %}
 <header>
 	<img class="logo" src="{{ asset('assets/images/Header/Logo.png') }}" alt="Logo de la société">
 	<nav>
-		<ul class="nav-links">
+		<div class="nav-links">
 			{% for menu in menus %}
-				<li>
-					<a>{{ menu }}</a>
-				</li>
+					<a class="link" {{ menu.href }}>{{ menu.name }}</a>
 			{% endfor %}
-		</ul>
-	</nav>
-		<div class="button-container">
-			<img class="button-connection" src="{{ asset('assets/images/Header/icone-connection.png') }}" alt="Icone de connection">
-			<div class="burger">
-				<span></span>
-			</div>
 		</div>
+	</nav>
+	<div class="button-container">
+		<img class="button-connection" src="{{ asset('assets/images/Header/icone-connection.png') }}" alt="Icone de connection">
+		<div class="burger">
+			<span></span>
+		</div>
+	</div>
 </header>
