@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('assets/css/Home/style.css') }}">
+{% endblock %}
+
+{% block body %}
+	<main>
+		<h1>Qui somme-nous !</h1>
+		<div class="qui-somme-nous-container">
+			<img src="{{ asset('assets/images/Home/qui somme-nous.png') }}" alt="">
+			<p class="qui-somme-nous-content">
+				Vincent Parrot avec ses 15 années d’expériences dans la réparation automobile, a ouvert depuis 2 ans un garage en 2021 à Toulouse afin de fournir aux toulousains un véritable lieu de confiance dans lequel il pourront faire entretenir leurs véhicules mais aussi en acheter un autre d’occasion.
+			</p>
+		</div>
+		<h2>Nos prestations</h2>
+		<div class="prestations-container">
+			<div class="prestation">Entretien mécanique toute marque</div>
+			<div class="prestation">Réparation carosserie</div>
+			<div class="prestation">Vente véhicule d'occasions</div>
+		</div>
+		<div class="container-avis">
+			<h2>Témoignage client</h2>
+			<div class="avis">
+				<div class="name-avis">
+					<div class="name">Jhon Doe</div>
+					<div class="note">*****</div>
+				</div>
+				<div class="content">
+					<p>Super garage je recommande
+					</p>
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}

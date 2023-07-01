@@ -1,0 +1,49 @@
+{% block footer %}
+	<!-- Les horaires -->
+	<div class="footer-container">
+		<div class="horaire-container">
+			{% set horaires = [
+        "lundi: 08:45-12:00, 14:00-18:00", 
+        "mardi: 08:45-12:00, 14:00-18:00",
+        "mercredi: 08:45-12:00, 14:00-18:00",
+        "jeudi: 08:45-12:00, 14:00-18:00",
+        "vendredi: 08:45-12:00, 14:00-18:00",
+        "samedi: 08:45-12:00, Fermé",
+        "dimanche: Fermé"
+        ] %}
+			<h3>Horaires d'ouverture</h3>
+			<ul class="horaire">
+				{% for horaire in horaires %}
+					<li>{{ horaire }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<!-- Contact -->
+		<div class="contact-container">
+			<h3>Contact</h3>
+			<div class="contact">
+				<p>Par téléphone: 06.85.97.42.35
+					<br>
+					ou via nôtre
+					<a href="">formulaire</a>
+				</p>
+			</div>
+		</div>
+		<div class="reseaux-container">
+			<h3>Retrouvez-nous aussi sur:</h3>
+			<div class="reseaux">
+				<a><img class="icone-reseau" src="{{ asset('assets/images/Footer/instagram.png') }}" alt=""></a>
+				<a><img class="icone-reseau" src="{{ asset('assets/images/Footer/twitter.png') }}" alt=""></a>
+				<a><img class="icone-reseau" src="{{ asset('assets/images/Footer/facebook.png') }}" alt=""></a>
+			</div>
+		</div>
+		<div class="en-plus">
+			<h3>En plus</h3>
+			<div class="mentions-cookie">
+				<a href="">Mentions légales et politiques de confidentialités</a>
+				<a href="">Cookies</a>
+			</div>
+		</div>
+	</div>
+	<!--  -->
+{% endblock %}
