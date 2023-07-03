@@ -1,9 +1,9 @@
 {% set menus = 
 [
-  {name : 'Accueil', href : 'href="/"'},
-  {name : 'Mécanique', href : 'href="/"'}, 
-  {name : 'Carrosserie', href : 'href="/"'}, 
-  {name : 'Occasion', href : 'href="/"'}
+  {name : 'Accueil', path : path('home')},
+  {name : 'Mécanique', path : path('mecanique')}, 
+  {name : 'Carrosserie', path : path('carrosserie')}, 
+  {name : 'Occasions', path : path('occasions')}
 ]
 %}
 
@@ -12,7 +12,7 @@
 	<nav>
 		<div class="nav-links">
 			{% for menu in menus %}
-				<a class="link" {{ menu.href }}>{{ menu.name }}</a>
+				<a class="link" href="{{ menu.path }}">{{ menu.name }}</a>
 			{% endfor %}
 		</div>
 	</nav>

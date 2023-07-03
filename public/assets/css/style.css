@@ -1,5 +1,6 @@
 * {
 	margin: 0px;
+  padding: 0;
 	list-style: none;
 	text-decoration: none;
 	box-sizing: border-box;
@@ -168,7 +169,7 @@ a {
 	text-decoration: none;
 }
 
-.contact p a:hover {
+a:hover {
 	color: #d92332;
 	text-decoration: underline;
 }
