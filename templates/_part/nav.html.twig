@@ -5,13 +5,14 @@
   {name : 'Carrosserie', href : 'href="/"'}, 
   {name : 'Occasion', href : 'href="/"'}
 ]
-   %}
+%}
+
 <header>
 	<img class="logo" src="{{ asset('assets/images/Header/Logo.png') }}" alt="Logo de la société">
 	<nav>
 		<div class="nav-links">
 			{% for menu in menus %}
-					<a class="link" {{ menu.href }}>{{ menu.name }}</a>
+				<a class="link" {{ menu.href }}>{{ menu.name }}</a>
 			{% endfor %}
 		</div>
 	</nav>
