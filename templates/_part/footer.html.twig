@@ -1,24 +1,7 @@
 {% block footer %}
 	<footer>
 		<!-- Les horaires -->
-		<div class="footer-container">
-			<div class="horaire-container">
-				{% set horaires = [
-        "lundi: 08:45-12:00, 14:00-18:00", 
-        "mardi: 08:45-12:00, 14:00-18:00",
-        "mercredi: 08:45-12:00, 14:00-18:00",
-        "jeudi: 08:45-12:00, 14:00-18:00",
-        "vendredi: 08:45-12:00, 14:00-18:00",
-        "samedi: 08:45-12:00, Fermé",
-        "dimanche: Fermé"
-        ] %}
-				<h3>Horaires d'ouverture</h3>
-				<ul class="horaire">
-					{% for horaire in horaires %}
-						<li>{{ horaire }}</li>
-					{% endfor %}
-				</ul>
-			</div>
+      {% include '_part/horaire/index.html.twig' %}
 			<!-- Contact -->
 			<div class="contact-container">
 				<h3>Contact</h3>
