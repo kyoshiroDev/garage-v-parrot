@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CardCarsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: CardCarsRepository::class)]
 class CardCars
@@ -14,24 +15,42 @@ class CardCars
     private ?int $id = null;
 
     #[ORM\Column(length: 20)]
+    #[Assert\Length(min: 2,max: 20,)]
+    #[Assert\NotBlank(message: 'Veuillez saisir une marque')]
     private ?string $marque = null;
 
     #[ORM\Column(length: 20)]
+    #[Assert\Length(min: 2,max: 20,)]
+    #[Assert\NotBlank(message: 'Veuillez saisir un model')]
     private ?string $model = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank(message: 'Veuillez saisir le nombre de kilomètre')]
+    #[Assert\PositiveOrZero(message: 'Veuillez saisir un nombre supérieur ou égal à 0')]
     private ?int $kilometre = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank(message: 'Veuillez saisir un nombre de porte')]
+    #[Assert\Positive(message: 'Veuillez saisir un nombre supérieur à 0')]
+    #[Assert\Length(min: 1,max: 1,message: 'Veuillez saisir un nombre entre 1 et 5')]
     private ?int $porte = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank(message: 'Veuillez saisir une puissance')]
+    #[Assert\Positive(message: 'Veuillez saisir un nombre supérieur à 0')]
+    #[Assert\Length(min: 1,max: 3)]
     private ?int $puissance = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank(message: 'Veuillez saisir une année')]
+    #[Assert\Positive()]
+    #[Assert\Length(min: 4,max: 4)]
     private ?int $année = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank(message: 'Veuillez saisir un prix')]
+    #[Assert\Positive(message: 'Veuillez saisir un nombre supérieur à 0')]
+    #[Assert\Length(min: 1,max: 5)]
     private ?float $prix = null;
 
     public function getId(): ?int
