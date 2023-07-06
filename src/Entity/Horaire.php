@@ -5,7 +5,6 @@ namespace App\Entity;
 use App\Repository\HoraireRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 #[ORM\Entity(repositoryClass: HoraireRepository::class)]
 #[UniqueEntity(fields: ['jours'], message: 'Ce jour existe déjà')]
