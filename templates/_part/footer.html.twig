@@ -1,7 +1,11 @@
 {% block footer %}
 	<footer>
 		<!-- Les horaires -->
-      {% include '_part/horaire/index.html.twig' %}
+		<div class="footer-container">
+			<div class="horaire-container">
+				<h3>Horaires d'ouverture</h3>
+				{{ render(path('app_horaire')) }}
+			</div>
 			<!-- Contact -->
 			<div class="contact-container">
 				<h3>Contact</h3>
