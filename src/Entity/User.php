@@ -22,9 +22,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
   #[ORM\Column(length: 180, unique: true)]
   #[Assert\NotBlank(message: 'Veuillez saisir une adresse email')]
   #[Assert\Length(min: 2, max: 180)]
-  #[Assert\Email(message: 'Veuillez saisir une adresse email valide')]
-  #[Assert\Unique(message: 'Cette adresse email est déjà utilisée')]
-  #[Assert\Regex(pattern: '/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/', message: 'Veuillez saisir une adresse email valide')]
 
   private ?string $email = null;
 
@@ -39,13 +36,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
   #[ORM\Column]
   #[Assert\NotBlank(message: 'Veuillez saisir un mot de passe')]
   #[Assert\Length(min: 6, max: 255)]
-  #[Assert\Regex(pattern: '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/', message: 'Veuillez saisir un mot de passe valide')]
   #[Assert\NotEqualTo(value: 'Mot de passe', message: 'Veuillez saisir un mot de passe valide')]
   private ?string $password = null;
 
   #[ORM\Column]
   #[Assert\NotNull(message: 'Veuillez choisir au moins un rôle')]
-  private array $roles = [];
+  private array $roles = ['Utilisateur'];
 
   #[ORM\Column(type: 'datetime_immutable')]
   #[Assert\NotNull]
