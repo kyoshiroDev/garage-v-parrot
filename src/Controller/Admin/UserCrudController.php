@@ -10,7 +10,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\FormField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-
+use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Text;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -33,11 +33,12 @@ class UserCrudController extends AbstractCrudController
       FormField::addPanel('Informations personnelles'),
       IdField::new('id')
         ->hideOnForm(),
+      TextField::new('name', 'Nom'),
       TextField::new('email'),
       TextField::new('password')
         ->hideOnIndex(),
       ArrayField::new('roles'),
-      DateTimeField::new('createdAt')
+      DateTimeField::new('createdAt', 'Créé le')
         ->hideOnForm()
     ];
   }
