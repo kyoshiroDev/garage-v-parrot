@@ -1,0 +1,66 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Occasions
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+	{% include "_part/nav.html.twig" %}
+
+	<div class="d-flex flex-wrap align-item-center justify-content-center">
+  
+		<div class="card m-3" style="width: 21rem;">
+			<img src="{{ asset('assets/images/Occasions/renault-clio.jpg') }}" class="card-img-top" alt="...">
+			<div class="card-body m-auto">
+				<h5 class="card-title">{{ marque }} {{ model }}</h5>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item d-flex justify-content-between fs-6">
+					<div>Kilomètrage:</div>
+					<div>{{ kilo }}</div>
+				</li>
+				<li class="list-group-item d-flex justify-content-between">
+					<div>Portes:</div>
+					<div>{{ porte }}</div>
+				</li>
+				<li class="list-group-item d-flex justify-content-between">
+					<div>CV Fiscaux:</div>
+					<div>{{ puissance }}</div>
+				</li>
+				<li class="list-group-item d-flex justify-content-between">
+					<div>Premiére mise en cirdulation:</div>
+					<div>{{ annee }}</div>
+				</li>
+				<li class="list-group-item d-flex justify-content-between">
+					<div>Energie:</div>
+					<div>{{ 'energie' }}</div>
+				</li>
+				<li class="list-group-item d-flex justify-content-between">
+					<div>Prix:</div>
+					<div>{{ prix }} &euro;</div>
+				</li>
+			</ul>
+			<div class="card-body m-auto">
+				<div class="d-flex text-align-center justify-content-center mb-3">
+					<h5 class="m-auto">Contact</h5>
+				</div>
+				<p class="fs-6 text-center">Par téléphone:
+					<a href="tel:06.85.97.42.35" class="card-link">06.85.97.42.35</a><br>
+					Ou via nôtre<a href="#" class="card-link">
+						formulaire</a>
+				</p>
+			</div>
+		</div>
+    <a href="{{ path('app_card_cars_index') }}">Revenir a la liste</a>
+	</div>
+	{% include "_part/footer.html.twig" %}
+{% endblock %}
+

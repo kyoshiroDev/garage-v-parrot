@@ -32,7 +32,7 @@ class CardCars
     #[ORM\Column]
     #[Assert\NotBlank(message: 'Veuillez saisir un nombre de porte')]
     #[Assert\Positive(message: 'Veuillez saisir un nombre supérieur à 0')]
-    #[Assert\Length(min: 1,max: 1,message: 'Veuillez saisir un nombre entre 1 et 5')]
+    #[Assert\PositiveOrZero(message: 'Veuillez saisir un nombre supérieur ou égal à 0')]
     private ?int $porte = null;
 
     #[ORM\Column]
@@ -45,13 +45,16 @@ class CardCars
     #[Assert\NotBlank(message: 'Veuillez saisir une année')]
     #[Assert\Positive()]
     #[Assert\Length(min: 4,max: 4)]
-    private ?int $année = null;
+    private ?int $annee = null;
 
     #[ORM\Column]
     #[Assert\NotBlank(message: 'Veuillez saisir un prix')]
     #[Assert\Positive(message: 'Veuillez saisir un nombre supérieur à 0')]
     #[Assert\Length(min: 1,max: 5)]
     private ?float $prix = null;
+
+    #[ORM\Column(length: 20)]
+    private ?string $energie = null;
 
     public function getId(): ?int
     {
@@ -118,14 +121,14 @@ class CardCars
         return $this;
     }
 
-    public function getAnnée(): ?int
+    public function getAnnee(): ?int
     {
-        return $this->année;
+        return $this->annee;
     }
 
-    public function setAnnée(int $année): static
+    public function setAnnee(int $annee): static
     {
-        $this->année = $année;
+        $this->annee = $annee;
 
         return $this;
     }
@@ -138,6 +141,18 @@ class CardCars
     public function setPrix(float $prix): static
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+
+    public function getEnergie(): ?string
+    {
+        return $this->energie;
+    }
+
+    public function setEnergie(string $energie): static
+    {
+        $this->energie = $energie;
 
         return $this;
     }

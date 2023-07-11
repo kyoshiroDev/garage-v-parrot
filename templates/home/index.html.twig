@@ -6,10 +6,11 @@
 
 {% block stylesheets %}
 	{{ parent() }}
-	<link rel="stylesheet" href="{{ asset('assets/css/Home/style.css') }}">
 {% endblock %}
 
+
 {% block body %}
+	{% include "_part/nav.html.twig" %}
 	<main>
 		<h1>Qui sommes-nous !</h1>
 		<div class="qui-somme-nous-container">
@@ -34,4 +35,6 @@
 			</div>
 		</div>
 	</main>
+
+	{% include "_part/footer.html.twig" %}
 {% endblock %}

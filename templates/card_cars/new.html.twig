@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CardCars
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<h1>Ajouter un Annonce</h1>
+
+	{{ include('card_cars/_form.html.twig') }}
+
+	<a href="{{ path('app_card_cars_index') }}">back to list</a>
+{% endblock %}

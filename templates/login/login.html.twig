@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('assets/css/Login/style.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<form class:"form">
+			<img class="logo" src="{{ asset('assets/images/Header/Logo2.png') }}" alt="Logo de la société">
+			<h3 class="text-center">Connexion</h3>
+			<div class="mb-3">
+				<label for="exampleInputEmail1" class="form-label">Email</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+			</div>
+			<div class="mb-3">
+				<label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+				<input type="password" class="form-control" id="exampleInputPassword1">
+			</div>
+			<button type="submit" class="btn ">Connexion</button>
+		</form>
+	</div>
+{% endblock %}

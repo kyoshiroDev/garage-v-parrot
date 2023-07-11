@@ -1,4 +1,5 @@
-{% set menus = 
+{% block header %}
+	{% set menus = 
 [
   {name : 'Accueil', path : path('app_home')},
   {name : 'Mécanique', path : path('app_mecanique')}, 
@@ -7,19 +8,20 @@
 ]
 %}
 
-<header>
-	<img class="logo" src="{{ asset('assets/images/Header/Logo.png') }}" alt="Logo de la société">
-	<nav>
-		<div class="nav-links">
-			{% for menu in menus %}
-				<a class="link" href="{{ menu.path }}">{{ menu.name }}</a>
-			{% endfor %}
+	<header>
+		<img class="logo" src="{{ asset('assets/images/Header/Logo.png') }}" alt="Logo de la société">
+		<nav>
+			<div class="nav-links">
+				{% for menu in menus %}
+					<a class="link" href="{{ menu.path }}">{{ menu.name }}</a>
+				{% endfor %}
+			</div>
+		</nav>
+		<div class="button-container">
+			<img class="button-connection" src="{{ asset('assets/images/Header/icone-connection.png') }}" alt="Icone de connection">
+			<div class="burger">
+				<span></span>
+			</div>
 		</div>
-	</nav>
-	<div class="button-container">
-		<img class="button-connection" src="{{ asset('assets/images/Header/icone-connection.png') }}" alt="Icone de connection">
-		<div class="burger">
-			<span></span>
-		</div>
-	</div>
-</header>
+	</header>
+{% endblock %}
