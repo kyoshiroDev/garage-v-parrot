@@ -29,7 +29,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
   private ?string $firstName = null;
 
   #[ORM\Column(type: 'string', length: 180, unique: true)]
-  #[Assert\NotBlank(message: 'Veuillez saisir une adresse email')]
+  #[Assert\Email(message: 'Veuillez saisir une adresse email valide')]
   #[Assert\Length(min: 2, max: 180)]
   private ?string $email = null;
 
@@ -43,8 +43,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
   #[ORM\Column(type: 'string')]
   #[Assert\NotBlank(message: 'Veuillez saisir un mot de passe')]
-  #[Assert\Length(min: 10, max: 255)]
-  #[Assert\NotEqualTo(value: 'Mot de passe', message: 'Veuillez saisir un mot de passe valide')]
   private string $password;
 
   #[ORM\Column(type: 'json')]
@@ -105,7 +103,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
   public function getRoles(): array
   {
     $roles = $this->roles;
-    // guarantee every user at least has ROLE_USER
     $roles[] = 'ROLE_USER';
   
     return array_unique($roles);

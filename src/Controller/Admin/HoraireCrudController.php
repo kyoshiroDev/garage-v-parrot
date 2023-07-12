@@ -10,25 +10,25 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class HoraireCrudController extends AbstractCrudController
 {
-    public static function getEntityFqcn(): string
-    {
-        return Horaire::class;
-    }
+  public static function getEntityFqcn(): string
+  {
+    return Horaire::class;
+  }
 
-    public function configureCrud(Crud $crud): Crud
-    {
-      return $crud
-        ->setEntityLabelInSingular('Horaire')
-        ->setEntityLabelInPlural('Horaires');
-    }
+  public function configureCrud(Crud $crud): Crud
+  {
+    return $crud
+      ->setEntityLabelInSingular('Horaire')
+      ->setEntityLabelInPlural('Horaires');
+  }
 
-    
-    public function configureFields(string $pageName): iterable
-    {
-        return [
-          TextField::new('jours')
-          ->hideOnForm(),
-          TextField::new('heures'),
-        ];
-    }  
+
+  public function configureFields(string $pageName): iterable
+  {
+    return [
+      TextField::new('jours')
+        ->hideOnForm(),
+      TextField::new('heures'),
+    ];
+  }
 }
