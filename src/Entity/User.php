@@ -7,14 +7,18 @@ use App\Repository\UserRepository;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 
 #[UniqueEntity('email', message: 'Cette adresse email est déjà utilisée')]
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\EntityListeners(['App\EntityListener\UserListener'])]
-class User implements UserInterface, PasswordAuthenticatedUserInterface
+class User implements UserInterface
 {
+
+  private $passwordHasher;
+
   #[ORM\Id]
   #[ORM\GeneratedValue]
   #[ORM\Column]
@@ -24,7 +28,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
   #[Assert\NotBlank(message: 'Veuillez saisir un nom')]
   private ?string $lastName = null;
 
-  #[ORM\Column(type: 'string',length: 255)]
+  #[ORM\Column(type: 'string', length: 255)]
   #[Assert\NotBlank(message: 'Veuillez saisir un prénom')]
   private ?string $firstName = null;
 
@@ -33,7 +37,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
   #[Assert\Length(min: 2, max: 180)]
   private ?string $email = null;
 
-  
+
 
   /**
    * @var string The hashed password
@@ -46,6 +50,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
   #[Assert\Length(min: 10, max: 255)]
   #[Assert\NotEqualTo(value: 'Mot de passe', message: 'Veuillez saisir un mot de passe valide')]
   private string $password;
+
+  public function _construct(UserPasswordHasherInterface $passwordHasher)
+  {
+    $this->passwordHasher = $passwordHasher;
+  }
 
   #[ORM\Column(type: 'json')]
   #[Assert\NotNull(message: 'Veuillez choisir au moins un rôle')]
@@ -107,7 +116,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     $roles = $this->roles;
     // guarantee every user at least has ROLE_USER
     $roles[] = 'ROLE_USER';
-  
+
     return array_unique($roles);
   }
 
@@ -126,9 +135,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     return $this->password;
   }
 
-  public function setPassword(string $password): static
+  public function setPassword(string $password): self
   {
-    $this->password = $password;
+    $this->password = $this->passwordHasher->hashPassword(
+      $this,
+      $password
+    );
 
     return $this;
   }
@@ -156,14 +168,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
   public function getFirstName(): ?string
   {
-      return $this->firstName;
+    return $this->firstName;
   }
 
   public function setFirstName(string $firstName): static
   {
-      $this->firstName = $firstName;
+    $this->firstName = $firstName;
 
-      return $this;
+    return $this;
   }
 
   /**
