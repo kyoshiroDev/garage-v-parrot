@@ -7,16 +7,15 @@ use App\Repository\UserRepository;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
-
 #[UniqueEntity('email', message: 'Cette adresse email est déjà utilisée')]
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-class User implements UserInterface
+#[ORM\EntityListeners(['App\EntityListener\UserListener'])]
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
-
-  private $passwordHasher;
 
   #[ORM\Id]
   #[ORM\GeneratedValue]
@@ -45,15 +44,8 @@ class User implements UserInterface
   private ?string $plainPassword = null;
 
   #[ORM\Column(type: 'string')]
-  #[Assert\NotBlank(message: 'Veuillez saisir un mot de passe')]
   #[Assert\Length(min: 10, max: 255)]
-  #[Assert\NotEqualTo(value: 'Mot de passe', message: 'Veuillez saisir un mot de passe valide')]
   private string $password;
-
-  public function _construct(UserPasswordHasherInterface $passwordHasher)
-  {
-    $this->passwordHasher = $passwordHasher;
-  }
 
   #[ORM\Column(type: 'json')]
   #[Assert\NotNull(message: 'Veuillez choisir au moins un rôle')]
@@ -134,13 +126,9 @@ class User implements UserInterface
     return $this->password;
   }
 
-  public function setPassword(string $password): self
+  public function setPassword(string $password): static
   {
-    $this->password = $this->passwordHasher->hashPassword(
-      $this,
-      $password
-    );
-
+    $this->password = $password;
     return $this;
   }
 

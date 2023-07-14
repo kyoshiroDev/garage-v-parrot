@@ -31,6 +31,7 @@ class UserController extends AbstractController
   public function new(Request $request, UserRepository $userRepository, ManagerRegistry $doctrine): Response
   {
     $user = new User();
+    $user->setPlainPassword('password');
     $form = $this->createForm(UserType::class, $user);
     $form->handleRequest($request);
 
