@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Prestation;
+use App\Entity\Prestations;
 use App\Repository\PrestationsRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -30,7 +30,7 @@ class PrestationController extends AbstractController
     #[Route('/prestation/new', name: 'app_prestation_new')]
     public function new(Request $request, ManagerRegistry $doctrine): Response
       {
-        $prestation = new Prestation();
+        $prestation = new Prestations();
 
         $form = $this->createForm(PrestationType::class, $prestation);
 
