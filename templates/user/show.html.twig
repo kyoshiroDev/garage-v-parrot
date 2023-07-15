@@ -1,34 +1,52 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}User
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('css/form/style.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ user.email }}</td>
-            </tr>
-            <tr>
-                <th>Roles</th>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_user_index') }}">back to list</a>
-
-    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
-
-    {{ include('user/_delete_form.html.twig') }}
+	<div class="row h-100 justify-content-center align-items-center" style="background-color: #e7e7e7">
+		<div class="d-inline-flex flex-column justify-content-center align-items-center w-auto p-5" style="background-color: #ffff">
+			<h1>{{ user.lastName }}
+				{{ user.firstName }}</h1>
+			<div class="card-body fs-6">
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>Id</th>
+							<td>{{ user.id }}</td>
+						</tr>
+						<tr>
+							<th>Email</th>
+							<td>{{ user.email }}</td>
+						</tr>
+						<tr>
+							<th>Roles</th>
+							<td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+						</tr>
+						<tr>
+							<th>Password</th>
+							<td>{{ user.password }}</td>
+						</tr>
+						<tr>
+							<th>Date de création</th>
+							<td>{{ user.createdAt ? user.createdAt|date('d-m-Y') : '' }}</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="d-flex justify-content-between align-items-center fs-6 p-2">
+					<a href="{{ path('app_user_index') }}">Revenir a la liste</a>
+					{{ include('user/_delete_form.html.twig') }}
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

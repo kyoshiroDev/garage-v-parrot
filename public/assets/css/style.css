@@ -47,10 +47,6 @@ nav {
 	height: 100%;
 }
 
-.link:hover {
-	color: #d92332;
-}
-
 .open {
 	top: 0;
 }
@@ -163,13 +159,13 @@ h3 {
 	font-size: 1.4em;
 }
 
-a {
+.link-contact {
 	color: #262526;
 	cursor: pointer;
 	text-decoration: none;
 }
 
-a:hover {
+.link-contact:hover {
 	color: #d92332;
 	text-decoration: underline;
 }

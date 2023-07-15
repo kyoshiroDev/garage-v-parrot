@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+
 
 
 
@@ -28,27 +30,36 @@ class UserController extends AbstractController
    * New User
    */
   #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
-  public function new(Request $request, UserRepository $userRepository, ManagerRegistry $doctrine): Response
+  public function new(Request $request, UserRepository $userRepository, ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher): Response
   {
     $user = new User();
-    $user->setPlainPassword('password');
+
     $form = $this->createForm(UserType::class, $user);
     $form->handleRequest($request);
 
     if ($form->isSubmitted() && $form->isValid()) {
+      dump($user);
+      $plaintextPassword = $user->getPassword();
 
+      $hashedPassword = $passwordHasher->hashPassword(
+        $user,
+        $plaintextPassword
+      );
+    
+      $user->setPassword($hashedPassword);
+      
       $em = $doctrine->getManager();
       $em->persist($user);
       $em->flush();
 
       $userRepository->save($user, true);
-
-      return $this->redirectToRoute('app_user_index');
+      
+      return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }
 
     return $this->render('user/new.html.twig', [
       'user' => $user,
-      'form' => $form,
+      'form' => $form->createView(),
     ]);
   }
 
@@ -62,9 +73,11 @@ class UserController extends AbstractController
     $form->handleRequest($request);
 
     if ($form->isSubmitted() && $form->isValid()) {
-      $userRepository->save($user, true);
+      
+      $em = $doctrine->getManager();
+      $em->flush();
 
-      $doctrine->getManager()->flush();
+      $userRepository->save($user, true);
 
       return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }
