@@ -159,13 +159,13 @@ h3 {
 	font-size: 1.4em;
 }
 
-.link-contact {
+.link {
 	color: #262526;
 	cursor: pointer;
 	text-decoration: none;
 }
 
-.link-contact:hover {
+.link:hover {
 	color: #d92332;
 	text-decoration: underline;
 }
