@@ -4,16 +4,14 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Form\EditUserType;
 use App\Repository\UserRepository;
 use Doctrine\Persistence\ManagerRegistry;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
-
-
-
 
 #[Route('/user')]
 class UserController extends AbstractController
@@ -38,7 +36,7 @@ class UserController extends AbstractController
     $form->handleRequest($request);
 
     if ($form->isSubmitted() && $form->isValid()) {
-      dump($user);
+      
       $plaintextPassword = $user->getPassword();
 
       $hashedPassword = $passwordHasher->hashPassword(
@@ -67,12 +65,22 @@ class UserController extends AbstractController
    * Edit User
    */
   #[Route('/{id}/edit', name: 'app_user_edit', methods: ['GET', 'POST'])]
-  public function edit(Request $request, User $user, UserRepository $userRepository, ManagerRegistry $doctrine): Response
-  {
-    $form = $this->createForm(UserType::class, $user);
-    $form->handleRequest($request);
+  public function edit(Request $request, User $user, UserRepository $userRepository, ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher): Response
+  { 
 
+    $form = $this->createForm(EditUserType::class, $user);
+    $form->handleRequest($request);
+    
     if ($form->isSubmitted() && $form->isValid()) {
+
+      $plaintextPassword = $user->getPassword();
+
+      $hashedPassword = $passwordHasher->hashPassword(
+        $user,
+        $plaintextPassword
+      );
+    
+      $user->setPassword($hashedPassword);
       
       $em = $doctrine->getManager();
       $em->flush();

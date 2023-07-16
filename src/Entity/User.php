@@ -45,6 +45,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
   #[Assert\Length(min: 10, max: 255)]
   private string $password;
 
+  
+
   #[ORM\Column(type: 'json')]
   #[Assert\NotNull(message: 'Veuillez choisir au moins un rôle')]
   private array $roles = ['ROLE_USER'];
@@ -120,7 +122,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
    * @see PasswordAuthenticatedUserInterface
    */
   public function getPassword(): string
-  {
+  { 
     return $this->password;
   }
 
