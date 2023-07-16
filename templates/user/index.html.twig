@@ -47,6 +47,9 @@
 									<button type="button" class="btn btn-outline-primary" onclick="window.location.href = '{{ path('app_user_edit', {'id': user.id}) }}'">
 										Modifier
 									</button>
+									<button type="button" class="btn btn-outline-primary d-none d-md-block" onclick="window.location.href = '{{ path('app_user_delete', {'id': user.id}) }}'">
+										Supprimer
+									</button>
 								</div>
 							</td>
 						</tr>
