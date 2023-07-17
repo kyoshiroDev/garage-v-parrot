@@ -1,0 +1,35 @@
+.navlat{
+  max-width: 200px;
+  background-color: #e7e7e7;
+}
+
+.nav-link{
+  color: #000;
+  margin-top: 30px;
+}
+
+.nav-link:hover{
+  color: #d92332;
+}
+
+.container-admin{
+  display: flex;
+	flex-grow: initial;
+	justify-content: space-between;
+	align-items: center;
+	height: 90px;
+	width: 100%;
+	background-color: #e7e7e7;
+}
+
+/* .main-admin{
+  position: absolute;
+} */
+
+aside{
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background-color: #e7e7e7;
+  padding-top: 90px;
+}

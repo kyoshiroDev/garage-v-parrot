@@ -1,11 +1,8 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}User index
-{% endblock %}
-
+{% extends "base.html.twig" %}
 {% block stylesheets %}
 	{{ parent() }}
-	<link rel="stylesheet" href="{{ asset('assets/css/index-user/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/User/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/NavBarAdmin/style.css') }}">
 {% endblock %}
 
 {% block javascripts %}
@@ -13,52 +10,56 @@
 {% endblock %}
 
 {% block body %}
-	<main class="d-flex flex-column justify-content-center align-items-center px-5 sm-px-2">
-		<h1 class="text-center fs-1 my-5 w-100">Liste des employés</h1>
-		<div class="d-flex justify-content-end align-items-center pe-3 w-100">
-			<button type="button" onclick="window.location.href = '{{ path('app_user_new') }}'" class="btn btn-primary text-center" style="width: 150px">
-				Nouveau
-			</button>
-		</div>
-			<table class="table">
-				<thead>
-					<tr class="text-center fs-4">
-						<th class="d-none d-lg-table-cell">Id</th>
-						<th>Nom</th>
-						<th>Prenom</th>
-						<th class="d-none d-md-table-cell">Email</th>
-						<th class="d-none d-lg-table-cell">Date de création</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					{% for user in users %}
-						<tr class="text-center fs-6">
-							<td class="align-middle d-none d-lg-table-cell">{{ user.id }}</td>
-							<td class="align-middle">{{ user.lastName }}</td>
-							<td class="align-middle">{{ user.firstName }}</td>
-							<td class="align-middle d-none d-md-table-cell">{{ user.email }}</td>
-							<td class="align-middle d-none d-lg-table-cell">{{ user.createdAt ? user.createdAt|date('d-m-Y') : '' }}</td>
-							<td>
-								<div class="btn-group" role="group" aria-label="Basic outlined example">
-									<button type="button" class="btn btn-outline-primary" onclick="window.location.href = '{{ path('app_user_show', {'id': user.id}) }}'">
-										Voir
-									</button>
-									<button type="button" class="btn btn-outline-primary" onclick="window.location.href = '{{ path('app_user_edit', {'id': user.id}) }}'">
-										Modifier
-									</button>
-									<button type="button" class="btn btn-outline-primary d-none d-md-block" onclick="window.location.href = '{{ path('app_user_delete', {'id': user.id}) }}'">
-										Supprimer
-									</button>
-								</div>
-							</td>
+	{% include "_adminPart/navbar.html.twig" %}
+	<main>
+		<div class="container d-flex flex-column justify-content-center align-items-center sm-px-2 mt-5 main-index">
+			<div class="d-flex justify-content-end align-items-center pe-3 w-100 mt-4">
+				<button type="button" onclick="window.location.href = '{{ path('app_user_new') }}'" class="btn btn-danger text-center" style="width: 150px">
+					Nouveau
+				</button>
+			</div>
+				<table class="container table w-100">
+					<thead>
+						<tr class="text-center fs-4">
+							<th class="d-none d-lg-table-cell">Id</th>
+							<th>Nom</th>
+							<th>Prenom</th>
+							<th class="d-none d-lg-table-cell">Email</th>
+							<th class="d-none d-lg-table-cell">Date de création</th>
+							<th></th>
 						</tr>
-					{% else %}
-						<tr>
-							<td colspan="5">no records found</td>
-						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{% for user in users %}
+							<tr class="text-center fs-6">
+								<td class="align-middle d-none d-lg-table-cell">{{ user.id }}</td>
+								<td class="align-middle">{{ user.lastName }}</td>
+								<td class="align-middle">{{ user.firstName }}</td>
+								<td class="align-middle d-none d-lg-table-cell">{{ user.email }}</td>
+								<td class="align-middle d-none d-lg-table-cell">{{ user.createdAt ? user.createdAt|date('d-m-Y') : '' }}</td>
+								<td>
+									<div class="btn-group" role="group" aria-label="Basic outlined example">
+										<button type="button" class="btn btn-outline-danger" onclick="window.location.href = '{{ path('app_user_show', {'id': user.id}) }}'">
+											Voir
+										</button>
+										<button type="button" class="btn btn-outline-danger" onclick="window.location.href = '{{ path('app_user_edit', {'id': user.id}) }}'">
+											Modifier
+										</button>
+										<button type="button" class="btn btn-outline-danger d-none d-md-block" onclick="window.location.href = '{{ path('app_user_delete', {'id': user.id}) }}'">
+											Supprimer
+										</button>
+									</div>
+								</td>
+							</tr>
+						{% else %}
+							<tr>
+								<td colspan="5">no records found</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+        </div>
+			</div>
+
 	</main>
 {% endblock %}

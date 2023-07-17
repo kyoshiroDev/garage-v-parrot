@@ -1,6 +1,6 @@
 * {
 	margin: 0px;
-  padding: 0;
+	padding: 0;
 	list-style: none;
 	text-decoration: none;
 	box-sizing: border-box;
@@ -9,7 +9,7 @@
 body {
 	font-size: 62.5%;
 	color: #262526;
-  height: 100vh;
+	height: 100vh;
 }
 
 header {
@@ -23,7 +23,7 @@ header {
 }
 
 .logo {
-	height: 200%;
+	height: 200px;
 	z-index: 1;
 }
 
@@ -54,7 +54,7 @@ nav {
 .button-container {
 	display: flex;
 	height: 270px;
-  width: 270px;
+	width: 270px;
 	justify-content: right;
 	align-items: center;
 }
@@ -62,13 +62,23 @@ nav {
 .button-connection {
 	z-index: 1;
 	height: 20px;
-  margin-right: 60px;
+	margin-right: 60px;
+}
+
+.button{
+  background-color: #d92332;
+  color: #e7e7e7;
+}
+
+.button:hover{
+  background-color: #aa202b;
+  color: #e7e7e7;
 }
 
 /* Button Menu burger */
 .burger {
 	height: 90px;
-  width: 35px;
+	width: 35px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -201,19 +211,20 @@ h3 {
 	font-size: 1.4em;
 }
 
-@media screen and (min-width: 900px) {
-
+@media screen and (min-width: 992px) {
 	.burger {
 		display: none;
 	}
-
+	.button-connection {
+		display: none;
+	}
 	nav {
 		position: relative;
 		height: 90px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 
 	.nav-links {
@@ -228,7 +239,7 @@ h3 {
 	}
 
 	.button-container {
-    justify-content: center;
+		justify-content: center;
 	}
 
 	.button-connection {
@@ -236,8 +247,8 @@ h3 {
 	}
 }
 
-@media screen and (min-width:1024px) {
-  .footer-container {
-    flex-direction: row;
-  }
+@media screen and (min-width: 1024px) {
+	.footer-container {
+		flex-direction: row;
+	}
 }

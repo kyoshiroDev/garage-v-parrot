@@ -1,1 +1,21 @@
-{% extends "@EasyAdmin/page/content.html.twig" %}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Administration
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+  <link rel="stylesheet" href="{{ asset('assets/css/NavBarAdmin/style.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+{% endblock %}
+
+
+
+{% block body %}
+{% include "_adminPart/navbar.html.twig" %}
+
+{% endblock %}

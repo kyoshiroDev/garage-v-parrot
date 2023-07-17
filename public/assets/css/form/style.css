@@ -1,9 +1,9 @@
 main{
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #e7e7e7;
+  align-items: start;
+  margin-top: 10px;
+  
 }
 
 .logo {
