@@ -10,8 +10,8 @@ body {
 }
 
 .logo {
-  width: 250px;
-  margin-bottom: 80px;
+height: 100px;
+margin-bottom: 40px;
 }
 
 h3 {
@@ -27,7 +27,7 @@ form {
   align-items: center;
   justify-content: center;
   border: 2px solid #d92332;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
   width: 460px;
   height: auto;
