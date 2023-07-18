@@ -49,7 +49,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
   #[ORM\Column(type: 'json')]
   #[Assert\NotNull(message: 'Veuillez choisir au moins un rôle')]
-  private array $roles = ['ROLE_USER'];
+  private array $roles = ['ROLE_USER', 'ROLE_ADMIN'];
 
   #[ORM\Column(type: 'datetime_immutable')]
   #[Assert\NotNull]
