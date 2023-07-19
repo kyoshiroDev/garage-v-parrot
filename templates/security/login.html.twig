@@ -10,19 +10,23 @@
 {% endblock %}
 
 {% block body %}
+	{% if error %}
+		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	{% endif %}
 	<div class="container">
 		<form class:"form" method="post" action="{{ path('app_login')}}">
 			<img class="logo" src="{{ asset('assets/images/Header/Logo2.png') }}" alt="Logo de la société">
 			<h3 class="text-center">Connexion</h3>
 			<div class="mb-3">
 				<label for="lastname" class="form-label">Email</label>
-				<input type="email" class="form-control" id="lastname" name="_username" placeholder="example@email.com" aria-describedby="emailHelp">
+				<input type="email" class="form-control" id="lastname" name="_username" placeholder="example@email.com" value="{{ last_username }}">
 			</div>
 			<div class="mb-3">
 				<label for="password" class="form-label">Mot de passe</label>
 				<input type="password" class="form-control" id="password" name="_password" placeholder="********">
 			</div>
-				<button type="submit" class="btn ">Se connecter</button>
+      <input type="hidden" name="_target_path" value="/admin/user" />
+			<button type="submit" class="btn ">Se connecter</button>
 		</form>
 	</div>
 {% endblock %}
