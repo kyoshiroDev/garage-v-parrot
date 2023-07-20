@@ -1,15 +1,22 @@
 # garage-v-parrot
 
 
-Site en ligne: https://ecf-garage-v-parrot-ad9426be4a47.herokuapp.com/
+Site en ligne: 
+
+https://ecf-garage-v-parrot-ad9426be4a47.herokuapp.com/
+
 pour accéder au compte admin: 
+
 email: vincent.parrot@gmail.com
+
 mots de passe: pasword12345
 
 Lien vers le pdf avec les graphiques, charte graphique, mock-up mobile et desktop:
-https://drive.google.com/file/d/1yZHbp-YYw6L3U4OpHihyxzTxO0F3iOWI/view?usp=sharing
+
+https://drive.google.com/file/d/1dQssQIrAO_pRd3A3vdHCqsO-eJXoP5Qg/view?usp=drive_link
 
 INSTALLATION EN LOCAL
+
 1 Installation de l'environnement:
 
 Afin de pouvoir exécuter l'application en local commencer par mettre en place l'environnement:
