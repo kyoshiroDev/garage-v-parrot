@@ -11,7 +11,7 @@ class CookiesController extends AbstractController
     #[Route('/cookies', name: 'app_cookies')]
     public function index(): Response
     {
-        return $this->render('cookies/index.html.twig', [
+        return $this->render('Pages/cookies/index.html.twig', [
             'controller_name' => 'CookiesController',
         ]);
     }

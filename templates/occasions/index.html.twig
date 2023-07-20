@@ -10,21 +10,16 @@
 {% endblock %}
 
 {% block javascripts %}
-  {{ parent() }}
-  <script src="{{ asset('assets/js/Home/script.js') }}"></script>
+	{{ parent() }}
+	<script src="{{ asset('assets/js/Home/script.js') }}"></script>
 {% endblock %}
-
-
 
 {% block body %}
-{% include "_part/nav.html.twig" %}
-
-<main>
-  <h1>Nos Occasions</h1>
-
-  
-</main>
-
-{% include "_part/footer.html.twig" %}
+	{% include "_part/nav.html.twig" %}
+	<div class="container">
+		{# {% for in  %}
+	
+		{% endfor %} #}
+	</div>
+	{% include "_part/footer.html.twig" %}
 {% endblock %}
-

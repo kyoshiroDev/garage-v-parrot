@@ -11,7 +11,7 @@ class CarrosserieController extends AbstractController
     #[Route('/carrosserie', name: 'app_carrosserie')]
     public function index(): Response
     {
-        return $this->render('carrosserie/index.html.twig', [
+        return $this->render('Pages/carrosserie/index.html.twig', [
             'controller_name' => 'CarrosserieController',
         ]);
     }

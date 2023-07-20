@@ -18,9 +18,13 @@
 			</div>
 		</nav>
 		<div class="button-container">
-			<img class="button-connection" src="{{ asset('assets/images/Header/icone-connection.png') }}" alt="Icone de connection">
+			<a href="{{ path('app_login') }}">
+      <img class="button-connection" src="{{ asset('assets/images/Header/person-fill.svg') }}" alt="">
+      </a>
 			<div class="burger">
-				<span></span>
+				<span class="ligne"></span>
+        <span class="ligne"></span>
+        <span class="ligne"></span>
 			</div>
 			<div class="container d-flex justify-content-end align-items-center d-none d-lg-block">
 				<button class="btn button" onclick="window.location.href='{{ path('app_login') }}'">Connection</button>

@@ -11,7 +11,7 @@ class MecaniqueController extends AbstractController
     #[Route('/mecanique', name: 'app_mecanique')]
     public function index(): Response
     {
-        return $this->render('mecanique/index.html.twig', [
+        return $this->render('Pages/mecanique/index.html.twig', [
             'controller_name' => 'MecaniqueController',
         ]);
     }

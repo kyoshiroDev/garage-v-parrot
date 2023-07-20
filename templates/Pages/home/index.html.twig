@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="{{ asset('assets/css/Home/style.css') }}">
 {% endblock %}
 
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}
 
 {% block body %}
 	{% include "_part/nav.html.twig" %}

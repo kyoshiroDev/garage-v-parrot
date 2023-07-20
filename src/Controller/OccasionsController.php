@@ -10,9 +10,10 @@ class OccasionsController extends AbstractController
 {
     #[Route('/occasions', name: 'app_occasions')]
     public function index(): Response
-    {
+    { 
+      
         return $this->render('occasions/index.html.twig', [
-            'controller_name' => 'OccasionsController',
-        ]);
+            'controller_name' => 'OccasionsController',]);
+            
     }
 }

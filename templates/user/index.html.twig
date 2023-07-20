@@ -18,9 +18,9 @@
 					Nouveau
 				</button>
 			</div>
-				<table class="container table w-100">
+				<table class="container table">
 					<thead>
-						<tr class="text-center fs-4">
+						<tr class="text-center fs-4 w-25">
 							<th class="d-none d-lg-table-cell">Id</th>
 							<th>Nom</th>
 							<th>Prenom</th>
@@ -31,7 +31,7 @@
 					</thead>
 					<tbody>
 						{% for user in users %}
-							<tr class="text-center fs-6">
+							<tr class="text-center fs-6 w-25">
 								<td class="align-middle d-none d-lg-table-cell">{{ user.id }}</td>
 								<td class="align-middle">{{ user.lastName }}</td>
 								<td class="align-middle">{{ user.firstName }}</td>
