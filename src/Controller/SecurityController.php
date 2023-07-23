@@ -12,22 +12,20 @@ interface PasswordAuthenticatedUserInterface
   public function getPassword(): ?string;
 }
 
+use App\Security\UserChecker;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
   #[Route(path: '/login', name: 'app_login', methods: ['GET', 'POST'])]
 
-  public function login(AuthenticationUtils $authenticationUtils): Response
+  public function login(AuthenticationUtils $authenticationUtils, UserChecker $userChecker): Response
   {
-
-    if ($this->getUser()) {
-      return $this->redirectToRoute('app_home');
-    }
-
+    
     // get the login error if there is one
     $error = $authenticationUtils->getLastAuthenticationError();
     // last username entered by the user

@@ -1,8 +1,13 @@
 .navlat{
-  max-width: 200px;
-  background-color: #e7e7e7;
+  z-index: 1;
+  width: 100%;
+  margin-left: -100%;
+  transition: all 0.5s ease-in-out;
 }
-
+.active{
+  margin-left: 0;
+  transition: all 0.5s ease-in-out;
+}
 .nav-link{
   color: #000;
   margin-top: 30px;
@@ -22,14 +27,16 @@
 	background-color: #e7e7e7;
 }
 
-/* .main-admin{
-  position: absolute;
-} */
-
 aside{
-  position: fixed;
-  width: 200px;
-  height: 100%;
+  position: absolute;
   background-color: #e7e7e7;
-  padding-top: 90px;
+}
+
+@media screen and (min-width: 576px) {
+  .navlat{
+    z-index: 0;
+    margin-left: 0;
+    max-width: 200px;
+    background-color: #e7e7e7;
+  }
 }
