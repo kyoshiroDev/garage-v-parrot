@@ -1,0 +1,9 @@
+{% block prestations %}
+	<div class="prestations-container">
+		{% for prestation in prestations %}
+			<div class="prestation">
+				{{ prestation.prestations}}
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -3,16 +3,17 @@
 namespace App\Form;
 
 use App\Entity\Prestations;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PrestationType extends AbstractType
+class PrestationsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('field_name')
+            ->add('prestations', TextType::class, ["label" => "Prestations"])
         ;
     }
 

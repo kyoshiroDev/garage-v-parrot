@@ -31,9 +31,8 @@ class UserChecker implements UserCheckerInterface
     if (!$user instanceof AppUser) {
       return;
     }
-    if ($user->getRoles('ROLE_USER')) {
-      return $this->urlGenerator->generate('admin', ['app_user_' => 'admin/user'],
-    UrlGeneratorInterface::ABSOLUTE_PATH);
+    if ($user->getRoles('ROLE_ADMIN')) {
+      return $this->urlGenerator->generate('app_user_index');
     }
   }
 }

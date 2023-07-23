@@ -7,10 +7,12 @@
 			<img class="logo" src="{{ asset('assets/images/Header/Logo.png') }}" alt="Logo de la société">
 		</div>
 		<div class="container-fluid d-flex justify-content-center align-items-center w-100">
-			<h1 class="text-center my-auto">Bonjour
-				</h1>
+			<h1 class="text-center my-auto">
+				Bonjour {{ app.user.lastName }} {{ app.user.firstName }}
+			</h1>
 		</div>
 	</div>
+
 	<div class="container d-flex justify-content-end align-items-center w-auto">
 		<a href="{{ path('app_login') }}">
 			<img class="d-md-none" width="30" src="{{ asset('assets/images/Header/logout.svg') }}" alt="">
@@ -23,7 +25,7 @@
 		<a class="nav-link" aria-current="page" href="{{ path('app_user_index') }}">Salariés</a>
 	</li>
 	<li class="nav-item">
-		<a class="nav-link" href="{{ path('app_prestation') }}">Prestations</a>
+		<a class="nav-link" href="{{ path('app_prestation_index') }}">Prestations</a>
 	</li>
 	<li class="nav-item">
 		<a class="nav-link" href="{{ path('app_horaire') }}">Horaires</a>

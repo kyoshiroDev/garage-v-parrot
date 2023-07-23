@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[ORM\Entity(repositoryClass: PrestationsRepository::class)]
-#[UniqueEntity(fields: ['prestation'], message: 'Cette prestation existe déjà')]
+#[UniqueEntity(fields: ['prestations'], message: 'Cette prestation existe déjà')]
 
 class Prestations
 {
@@ -21,21 +21,21 @@ class Prestations
     #[Assert\NotBlank(message: 'Veuillez saisir une prestation')]
     #[Assert\Length(min: 2, max: 255)]
     
-    private ?string $prestation = null;
+    private ?string $prestations = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getPrestation(): ?string
+    public function getPrestations(): ?string
     {
-        return $this->prestation;
+        return $this->prestations;
     }
 
-    public function setPrestation(string $prestation): static
+    public function setPrestations(string $prestations): static
     {
-        $this->prestation = $prestation;
+        $this->prestations = $prestations;
 
         return $this;
     }

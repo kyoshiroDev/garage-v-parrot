@@ -1,19 +1,60 @@
 {% extends "base.html.twig" %}
 
 {% block stylesheets %}
-  {{ parent() }} 
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset('assets/css/User/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/NavBarAdmin/style.css') }}">
 {% endblock %}
 
 {% block javascripts %}
 	{{ parent() }}
+	<script src="{{ asset('assets/js/NavAdmin/script.js') }}" defer></script>
 {% endblock %}
 
+
 {% block body %}
-	<div class="prestations-container">
-		{% for prestation in prestations %}
-			<div class="prestation">
-				{{prestation.prestation }}
+	{% include "admin/dashboard.html.twig" %}
+
+	<main class="w-auto">
+		<div class="container d-flex flex-column justify-content-center align-items-center sm-px-2 mt-5 main-index">
+			<div class="d-flex justify-content-end align-items-center pe-3 w-100 mt-4">
+				<button type="button" onclick="window.location.href = '{{ path('app_prestation_new') }}'" class="btn btn-danger text-center" style="width: 150px">
+					Nouveau
+				</button>
 			</div>
-		{% endfor %}
+			<table class="container table">
+				<thead>
+					<tr class="text-center fs-4 w-25">
+						<th class="d-none d-lg-table-cell">Id</th>
+            <th class="d-none d-lg-table-cell">Prestations</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for prestation in prestations %}
+						<tr class="text-center fs-6 w-25">
+							<td class="align-middle d-none d-lg-table-cell">{{ prestation.id }}</td>
+              <td class="align-middle d-none d-lg-table-cell">{{ prestation.prestations }}</td>
+								{# <div class="btn-group" role="group" aria-label="Basic outlined example">
+									<button type="button" class="btn btn-outline-danger" onclick="window.location.href = '{{ path('app_prestation_show', {'id': prestation.id}) }}'">
+										Voir
+									</button>
+									<button type="button" class="btn btn-outline-danger" onclick="window.location.href = '{{ path('app_prestation_edit', {'id': prestation.id}) }}'">
+										Modifier
+									</button>
+									<button type="button" class="btn btn-outline-danger d-none d-lg-block" onclick="window.location.href = '{{ path('app_prestation_delete', {'id': prestation.id}) }}'">
+										Supprimer
+									</button>
+								</div> #}
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="5">no records found</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
 	</div>
-{% endblock %}
+
+</main>{% endblock %}
