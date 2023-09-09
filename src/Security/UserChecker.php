@@ -33,6 +33,9 @@ class UserChecker implements UserCheckerInterface
     }
     if ($user->getRoles('ROLE_ADMIN')) {
       return $this->urlGenerator->generate('app_user_index');
+    } 
+    elseif ($user->getRoles('ROLE_USER')) {
+      return $this->urlGenerator->generate('app_card_cars_index');
     }
   }
 }

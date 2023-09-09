@@ -1,0 +1,28 @@
+<div class="container-admin">
+	<div class="container-fluid d-flex aign-item-center justify-contentevenly w-100 position-fixed-top">
+		<div class="container w-auto d-sm-none burger-admin">
+			<img width="40" class="my-auto" src="{{ asset('assets/images/Header/menu-burger.svg') }}" alt="bouton burger">
+		</div>
+		<div class="container d-none d-sm-block w-auto">
+			<img class="logo" src="{{ asset('assets/images/Header/Logo.png') }}" alt="Logo de la société">
+		</div>
+		<div class="container-fluid d-flex justify-content-center align-items-center w-100">
+			<h1 class="text-center my-auto">
+				Bonjour {{ app.user.lastName }} {{ app.user.firstName }}
+			</h1>
+		</div>
+	</div>
+
+	<div class="container d-flex justify-content-end align-items-center w-auto">
+		<a href="{{ path('app_login') }}">
+			<img class="d-md-none" width="30" src="{{ asset('assets/images/Header/logout.svg') }}" alt="">
+		</a>
+		<button type="submit" class="btn btn-danger d-none d-md-block" onclick="window.location.href='{{ path('app_logout') }}'">Déconnection</button>
+	</div>
+</div></div><aside class="container d-inline-flex flex-column p-2 h-100 fs-6 navlat">
+<ul class="nav flex-column align-items-center">
+	<li class="nav-item">
+		<a class="nav-link" aria-current="page" href="{{ path('app_card_cars_index') }}">Occasions</a>
+	</li>
+</ul></aside>
+
