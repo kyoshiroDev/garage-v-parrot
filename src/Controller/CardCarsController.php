@@ -11,10 +11,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('users/card/cars')]
+#[Route('users/card/cars', name:'app_card_cars_')]
 class CardCarsController extends AbstractController
 {
-  #[Route('/', name: 'app_card_cars_index', methods: ['GET'])]
+  #[Route('/', name: 'index', methods: ['GET'])]
   public function index(CardCarsRepository $cardCarsRepository): Response
   {
     return $this->render('card_cars/index.html.twig', [
@@ -23,7 +23,7 @@ class CardCarsController extends AbstractController
   }
 
   // New CardCars
-  #[Route('/new', name: 'app_card_cars_new', methods: ['GET', 'POST'])]
+  #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
   public function new(Request $request, CardCarsRepository $cardCarsRepository, ManagerRegistry $doctrine): Response
   {
     $cardCar = new CardCars();
@@ -47,7 +47,7 @@ class CardCarsController extends AbstractController
   }
 
   // Edit CardCars
-  #[Route('/{id}/edit', name: 'app_card_cars_edit', methods: ['GET', 'POST'])]
+  #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
   public function edit(Request $request, CardCars $cardCar, CardCarsRepository $cardCarsRepository, ManagerRegistry $doctrine): Response
   {
     $form = $this->createForm(CardCarsType::class, $cardCar);
@@ -68,7 +68,7 @@ class CardCarsController extends AbstractController
   }
 
   // Delete CardCars
-  #[Route('/{id}', name: 'app_card_cars_delete', methods: ['POST'])]
+  #[Route('/{id}', name: 'delete', methods: ['POST'])]
   public function delete(Request $request, CardCars $cardCar, CardCarsRepository $cardCarsRepository, ManagerRegistry $doctrine): Response
   {
     if ($this->isCsrfTokenValid('delete' . $cardCar->getId(), $request->request->get('_token'))) {
