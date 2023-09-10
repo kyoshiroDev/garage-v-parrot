@@ -6,7 +6,7 @@
 {% block stylesheets %}
 	{{ parent() }}
 	<link rel="stylesheet" href="{{ asset('assets/css/User-show/style.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/css/NavBarAdmin/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/NavBarAdmin/style.css') }}">
 {% endblock %}
 
 {% block javascripts %}
@@ -14,13 +14,13 @@
 {% endblock %}
 
 {% block body %}
-{% include "admin/dashboard.html.twig" %}
-	<div class=" main p-4 justify-content-center align-items-start mw-50 my-auto">
+	{% include "admin/dashboard.html.twig" %}
+	<div class=" main p-4">
 		<div class="container mt-5 main-index d-flex flex-column justify-content-center align-items-center" style="background-color: #ffff">
 			<h2 class="pt-2 fs-1">{{ user.lastName }}
 				{{ user.firstName }}</h2>
-			<div class="card-body fs-6 p-2">
-				<table class="table">
+			<div class="container card-body fs-6 p-2">
+				<table class="container table">
 					<tbody>
 						<tr>
 							<th>Id</th>
@@ -34,10 +34,10 @@
 							<th>Roles</th>
 							<td>{{ user.roles ? user.roles|json_encode : '' }}</td>
 						</tr>
-						<tr>
+						{# <tr>
 							<th>Password</th>
 							<td>{{ user.password }}</td>
-						</tr>
+						</tr> #}
 						<tr>
 							<th>Date de création</th>
 							<td>{{ user.createdAt ? user.createdAt|date('d-m-Y') : '' }}</td>

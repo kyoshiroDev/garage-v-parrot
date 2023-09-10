@@ -3,11 +3,12 @@
 namespace App\Form;
 
 use App\Entity\User;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class EditUserType extends AbstractType
 {
@@ -16,7 +17,16 @@ class EditUserType extends AbstractType
         $builder
             ->add('lastName', TextType::class, ["label" => "Nom"])
             ->add('firstName', TextType::class, ["label" => "Prenom"])
-            ->add('email', EmailType::class, ["label" => "Email"]);
+            ->add('email', EmailType::class, ["label" => "Email"])
+            ->add('roles', ChoiceType::class, [
+              'choices' => [
+                  'Utilisateur' => 'ROLE_USER',
+                  'Administrateur' => 'ROLE_ADMIN',
+              ],
+              'expanded' => true,
+              'multiple' => true,
+              'label' => 'Rôles',
+          ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

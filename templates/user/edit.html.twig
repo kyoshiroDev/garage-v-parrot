@@ -24,6 +24,7 @@
 				{{ form_row(form.lastName)}}
 				{{ form_row(form.firstName) }}
 				{{ form_row(form.email) }}
+        {{ form_row(form.roles) }}
 				<div class="button-container">
 					<input type="submit" value="Envoyer" class="btn btn-success m-1 button"></input>
 					<button type="button" class="btn btn-danger m-1 button" onclick="window.location.href='{{ path('app_user_index') }}'">Annuler</button>

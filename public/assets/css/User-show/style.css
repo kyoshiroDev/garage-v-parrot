@@ -1,9 +1,15 @@
-
-.main{
-  max-width: 100%;
+.main {
+	min-width: 400px;
+	max-width: max-content;
 }
 
-.main-index{
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+.main-index {
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (min-width: 576px) {
+	.main {
+		margin-left: 220px;
+	}
 }
