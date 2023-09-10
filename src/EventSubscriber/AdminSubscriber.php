@@ -23,7 +23,7 @@ class AdminSubscriber implements EventSubscriberInterface
     {
         $user = $event->getUser();
 
-        if (in_array('ROLE_ADMIN', $user->getRoles())) {
+        if (in_array('ROLE_ADMIN' && 'ROLE_USER', $user->getRoles())) {
             $event->getResponse()->headers->set('Location', $this->urlGenerator->generate('app_user_index'));
         }
     }

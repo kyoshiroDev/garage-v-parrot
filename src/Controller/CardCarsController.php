@@ -82,9 +82,10 @@ class CardCarsController extends AbstractController
   }
 
   // Show CardCars
-  #[Route('/{id}', name: 'app_card_cars_show', methods: ['GET'])]
+  #[Route('/{id}', name: 'show', methods: ['GET'])]
   public function show(CardCars $cardCar): Response
   {
+    $id = $cardCar->getId();
     $marque = $cardCar->getMarque();
     $model = $cardCar->getModel();
     $kilo = $cardCar->getKilometre();
@@ -95,7 +96,8 @@ class CardCarsController extends AbstractController
     $prix = $cardCar->getPrix();
 
     return $this->render('card_cars/show.html.twig', [
-      'card_cars' => $cardCar,
+      'cardCar' => $cardCar,
+      'id' => $id,
       'marque' => $marque,
       'model' => $model,
       'kilo' => $kilo,

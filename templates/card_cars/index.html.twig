@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 {% block stylesheets %}
 	{{ parent() }}
-	<link rel="stylesheet" href="{{ asset('assets/css/User/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/User/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/NavBarAdmin/style.css') }}">
 {% endblock %}
 
@@ -14,6 +14,11 @@
 	{% include "Users/dashboard.html.twig" %}
 	<h1 class="text-center m-3">Tableaux des annonces</h1>
 	<div class="container">
+		<div class="d-flex justify-content-end align-items-center pe-3 w-100 mt-4">
+			<button type="button" onclick="window.location.href = '{{ path('app_user_new') }}'" class="btn btn-danger text-center" style="width: 150px">
+				Nouveau
+			</button>
+		</div>
 		<table class="table fs-6 border mt-3">
 			<thead class="text-center">
 				<tr>
@@ -42,21 +47,16 @@
 						<td style="vertical-align: middle;">{{ card_car.prix }}</td>
 						<td style="vertical-align: middle;">{{ card_car.energie }}</td>
 						<td>
-							<div class="btn-group " role="group" aria-label="Basic outlined example">
-								<button type="button" class="btn btn-outline-primary">
+							<div class="btn-group" role="group" aria-label="Basic outlined example">
+								<button type="button" class="btn btn-outline-danger">
 									<a href="{{ path('app_card_cars_show', {'id': card_car.id}) }}">Voir</a>
 								</button>
-								<button type="button" class="btn btn-outline-primary">
+								<button type="button" class="btn btn-outline-danger">
 									<a href="{{ path('app_card_cars_edit', {'id': card_car.id}) }}"></a>Modifier</button>
-								<button type="button" class="btn btn-outline-primary">
+								<button type="button" class="btn btn-outline-danger">
 									<a href="{{ path('app_card_cars_delete', {'id': card_car.id}) }}"></a>Supprimer</button>
 							</div>
 						</td>
-						<div class="d-flex justify-content-end me-5">
-							<button type="button" class="btn btn-primary align-">
-								<a href="{{ path('app_card_cars_new') }}"></a>Ajouter
-							</button>
-						</div>
 					</tr>
 				{% else %}
 					<tr>
