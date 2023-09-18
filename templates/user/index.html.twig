@@ -8,13 +8,16 @@
 {% block javascripts %}
 	{{ parent() }}
 	<script src="{{ asset('assets/js/NavAdmin/script.js') }}" defer></script>
+  <script src="{{ asset('assets/js/User/script.js') }}" defer></script>
 {% endblock %}
-
 
 {% block body %}
 	{% include "admin/dashboard.html.twig" %}
 
 	<main class="w-auto">
+		<div class="container w-50">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher" title="Type in a name" class="container d-flex flex-raw justify-content-start align-items-center sm-px-2 mt-5 search">
+		</div>
 		<div class="container d-flex flex-column justify-content-center align-items-center sm-px-2 mt-5 main-index">
 			<div class="d-flex justify-content-end align-items-center pe-3 w-100 mt-4">
 				<button type="button" onclick="window.location.href = '{{ path('app_user_new') }}'" class="btn btn-danger text-center" style="width: 150px">
@@ -28,19 +31,19 @@
 						<th>Nom</th>
 						<th>Prenom</th>
 						<th class="d-none d-lg-table-cell">Email</th>
-            <th class="d-none d-xl-table-cell">Roles</th>
+						<th class="d-none d-xl-table-cell">Roles</th>
 						<th class="d-none d-xl-table-cell">Date de création</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					{% for user in users %}
-						<tr class="text-center fs-6 w-25">
+						<tr class="text-center fs-6 w-25 search-results">
 							<td class="align-middle d-none d-lg-table-cell">{{ user.id }}</td>
 							<td class="align-middle">{{ user.lastName }}</td>
 							<td class="align-middle">{{ user.firstName }}</td>
 							<td class="align-middle d-none d-lg-table-cell">{{ user.email }}</td>
-              <td class="align-middle d-none d-xl-table-cell">{{ user.roles ? user.roles|join(', ') : '' }}</td>
+							<td class="align-middle d-none d-xl-table-cell">{{ user.roles ? user.roles|join(', ') : '' }}</td>
 							<td class="align-middle d-none d-xl-table-cell">{{ user.createdAt ? user.createdAt|date('d-m-Y') : '' }}</td>
 							<td>
 								<div class="btn-group" role="group" aria-label="Basic outlined example">
