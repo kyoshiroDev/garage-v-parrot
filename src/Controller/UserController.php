@@ -11,17 +11,39 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 #[Route('admin/user', name: 'app_user_')]
 class UserController extends AbstractController
 {
+
   #[Route('/', name: 'index', methods: ['GET'])]
   public function index(UserRepository $userRepository): Response
   {
     return $this->render('user/index.html.twig', [
       'users' => $userRepository->findAll(),
     ]);
+  }
+
+  #[Route('/all', name: 'users', methods: ['GET'])]
+  public function users(UserRepository $userRepository): JsonResponse
+  {
+    $allUsers = $userRepository->findAll();
+
+    $users = [];
+    foreach($allUsers as $user) {
+      $users[] = [
+        'id' => $user->getId(),
+        'last_name' => $user->getLastName(),
+        'first_name' => $user->getFirstName(),
+        'email' => $user->getEmail(),
+        'roles' => $user->getRoles(),
+        'created_at' => $user->getCreatedAt()->format('d/m/Y'),
+      ];
+    }
+
+    return $this->json($users);
   }
 
   /**
@@ -36,22 +58,22 @@ class UserController extends AbstractController
     $form->handleRequest($request);
 
     if ($form->isSubmitted() && $form->isValid()) {
-      
+
       $plaintextPassword = $user->getPassword();
 
       $hashedPassword = $passwordHasher->hashPassword(
         $user,
         $plaintextPassword
       );
-    
+
       $user->setPassword($hashedPassword);
-      
+
       $em = $doctrine->getManager();
       $em->persist($user);
       $em->flush();
 
       $userRepository->save($user, true);
-      
+
       return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }
 
@@ -66,11 +88,11 @@ class UserController extends AbstractController
    */
   #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
   public function edit(Request $request, User $user, UserRepository $userRepository, ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher): Response
-  { 
+  {
 
     $form = $this->createForm(EditUserType::class, $user);
     $form->handleRequest($request);
-    
+
     if ($form->isSubmitted() && $form->isValid()) {
 
       $plaintextPassword = $user->getPassword();
@@ -79,9 +101,9 @@ class UserController extends AbstractController
         $user,
         $plaintextPassword
       );
-    
+
       $user->setPassword($hashedPassword);
-      
+
       $em = $doctrine->getManager();
       $em->flush();
 

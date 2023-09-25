@@ -9,9 +9,10 @@
 	<link rel="stylesheet" href="{{ asset('assets/css/NavBarAdmin/style.css') }}">
 {% endblock %}
 
-{% block javascripts %}
-	{{ parent() }}
-{% endblock %}
+
+	{% block javascripts %}
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
+	{% endblock %}
 
 {% block body %}
 	{% include "admin/dashboard.html.twig" %}
@@ -35,9 +36,9 @@
 							<td>{{ user.roles ? user.roles|json_encode : '' }}</td>
 						</tr>
 						{# <tr>
-							<th>Password</th>
-							<td>{{ user.password }}</td>
-						</tr> #}
+													<th>Password</th>
+													<td>{{ user.password }}</td>
+												</tr> #}
 						<tr>
 							<th>Date de création</th>
 							<td>{{ user.createdAt ? user.createdAt|date('d-m-Y') : '' }}</td>
