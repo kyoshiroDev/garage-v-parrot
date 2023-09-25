@@ -6,12 +6,10 @@ async function getUsers() {
 			.then((res) => res.json())
 			.then((data) => {
 				orderList(data);
-				console.log(data);
 				dataArray = data;
 				createUserList(data);
 			});
 	} catch (error) {
-		console.log(error);
 	}
 }
 
