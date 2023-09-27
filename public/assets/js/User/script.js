@@ -12,9 +12,9 @@ async function getUsers() {
 	} catch (error) {
 	}
 }
-
 getUsers();
 
+/* Mise en ordre alphabétique */
 function orderList(data) {
 	data.sort((a, b) => {
 		if (a.last_name < b.last_name) {
@@ -27,6 +27,7 @@ function orderList(data) {
 	});
 }
 
+/* Création du table avec nos données */
 const tableResults = document.querySelector(".table-results");
 
 function createUserList(data) {
@@ -52,8 +53,7 @@ function createUserList(data) {
 	});
 }
 
-/* Filtration */
-
+/* Filtration de nos données */
 const searchInput = document.querySelector("#myInput");
 
 searchInput.addEventListener("input", filterData);
