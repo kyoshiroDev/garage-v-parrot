@@ -6,7 +6,7 @@ services:
     container_name: garage-v-parrot-database
     restart: always
     ports:
-      - 5006:3306
+      - 6666:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: garage-v-parrot
@@ -18,7 +18,7 @@ services:
     container_name: garage-v-parrot-phpmyadmin
     restart: always
     ports:
-      - 5080:80
+      - 5089:80
     depends_on: 
       - database
     environment:
