@@ -13,36 +13,67 @@
 
 {% block body %}
 	{% include "_part/nav.html.twig" %}
-	<style>
-		.example-wrapper {
-			margin: 1em auto;
-			max-width: 800px;
-			width: 95%;
-			font: 18px / 1.5 sans-serif;
-		}
-		.example-wrapper code {
-			background: #F5F5F5;
-			padding: 2px 6px;
-		}
-	</style>
-
-	<div class="example-wrapper">
-		<h1>Hello
-			{{ controller_name }}! ✅</h1>
-
-		This friendly message is coming from:
-		<ul>
-			<li>Your controller at
-				<code>
-					<a href="{{ '/home/kyoshiro/Bureau/Projet ECF/garage-v-parrot/src/Controller/CarrosserieController.php'|file_link(0) }}">src/Controller/CarrosserieController.php</a>
-				</code>
-			</li>
-			<li>Your template at
-				<code>
-					<a href="{{ '/home/kyoshiro/Bureau/Projet ECF/garage-v-parrot/templates/carrosserie/index.html.twig'|file_link(0) }}">templates/carrosserie/index.html.twig</a>
-				</code>
-			</li>
-		</ul>
+	
+	<h1 class="text-center my-5 text-danger">Réparation carrosserie</h1>
+	<div class="card m-auto mt-5 col-md-9 col-lg-6 col-11">
+		<div class="card-body contenu-entretien">
+			<h5 class="card-title text-danger text-center h3">Peinture</h5>
+			<p class="card-text h6">Plongez dans l'univers de la perfection automobile avec notre service de peinture de carrosserie.
+				Nos artisans passionnés redonnent vie à votre voiture en utilisant des techniques de peinture de pointe.
+				Chaque nuance est méticuleusement choisie pour s'harmoniser avec votre style,
+				assurant une finition éclatante et durable.
+				Optez pour une transformation visuelle spectaculaire qui transcende les simples coups de pinceau,
+				et offrez à votre véhicule une allure aussi exceptionnelle que vous.
+				Rendez-vous sur notre site et explorez l'art de la peinture automobile pour une expérience unique.</p>
+		</div>
+		<img src="{{ asset('assets/images/Reparation carrosserie/peinture-voiture.jpg') }}" class="card-img-top p-2 images" alt="peinture de la voiture">
+		<div class="card-body contenu-entretien">
+			<p class="card-text h6 mb-3 text-center">Dans notre atelier,
+				la peinture de carrosserie est bien plus qu'une simple application de couleurs.
+				Chaque couche est appliquée avec expertise, créant une surface lisse et résistante aux éléments.
+				Notre palette de teintes de qualité supérieure offre non seulement une esthétique remarquable,
+				mais également une protection durable contre l'usure. Confiez-nous votre voiture,
+				et laissez notre équipe dédiée transcender vos attentes,
+				offrant à votre véhicule une allure qui se distingue sur la route.
+				Découvrez comment notre art de la peinture redéfinit la beauté automobile sur notre site dès aujourd'hui.</p>
+			<div class="card-text align-items-center m-auto px-3 py-1 border border-danger" style="width: max-content">
+				<h5 class="text-center">CONTACT</h5>
+				<p class="h6 text-center">Par téléphone: 06.85.97.42.35<br>
+					ou via nôtre <a href="" class="text-danger">formulaire</a></p>
+			</div>
+		</div>
 	</div>
+	
+	<div class="card m-auto mt-5 col-md-9 col-lg-6 col-11 mb-5">
+		<div class="card-body contenu-entretien">
+			<h5 class="card-title text-danger text-center h3">Peinture</h5>
+			<p class="card-text h6">Découvrez l'art du débosselage sur notre site, où la perfection rencontre la carrosserie.
+				Notre équipe qualifiée redonne vie à votre voiture en éliminant chaque bosse avec précision,
+				préservant ainsi l'esthétique d'origine. Grâce à notre technique de débosselage sans peinture,
+				votre véhicule retrouve son éclat sans compromettre la finition d'usine.
+				Offrez-lui une seconde jeunesse avec notre service expert de débosselage,
+				alliant savoir-faire artisanal et technologie de pointe. Redécouvrez la beauté de votre voiture,
+				sans trace de chaque enfoncement, grâce à notre expertise inégalée.</p>
+		</div>
+		<img src="{{ asset('assets/images/Reparation carrosserie/debosselage.jpeg') }}"
+				 class="card-img-top p-2 images"
+				 alt="peinture de la voiture">
+		<div class="card-body contenu-entretien">
+			<p class="card-text h6 mb-3">Notre engagement envers la perfection se poursuit
+				avec des résultats qui dépassent vos attentes.
+				Chaque détail compte dans notre approche du débosselage,
+				car nous comprenons l'importance de préserver l'intégrité de votre véhicule.
+				En choisissant notre service, vous optez pour une réparation sans faille,
+				une rénovation qui laisse votre carrosserie impeccable. Profitez d'une conduite en toute élégance,
+				libérée de tout impact visuel, grâce à notre expertise dévouée. Confiez-nous votre voiture,
+				et redécouvrez le plaisir de rouler dans un véhicule à l'apparence irréprochable.</p>
+			<div class="card-text align-items-center m-auto px-3 py-1 border border-danger" style="width: max-content">
+				<h5 class="text-center">CONTACT</h5>
+				<p class="h6 text-center">Par téléphone: 06.85.97.42.35<br>
+					ou via nôtre <a href="" class="text-danger">formulaire</a></p>
+			</div>
+		</div>
+	</div>
+	
 	{% include "_part/footer.html.twig" %}
 {% endblock %}

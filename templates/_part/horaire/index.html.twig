@@ -13,11 +13,16 @@
 
 
 	<ul class="horaire">
-			{% for horaire in horaires %}
+		{# {% for horaire in horaires %} #}
 				<li>
-					{{horaire.jours }}:
-					{{horaire.heures }}
+					Lundi : 08:45 - 12h00 / 14h00 - 18h00<br>
+					Mardi : 08:45 - 12h00 / 14h00 - 18h00<br>
+					Mercredi : 08:45 - 12h00 / 14h00 - 18h00<br>
+					Jeudi : 08:45 - 12h00 / 14h00 - 18h00<br>
+					Vendredi : 08:45 - 12h00 / 14h00 - 18h00<br>
+					Samedi : 08:45 - 12h00<br>
+					Dimanche : Fermé
 				</li>
-			{% endfor %}
+{# {% endfor %} #}
 	</ul>
 {% endblock %}

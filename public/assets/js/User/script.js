@@ -12,7 +12,7 @@ async function getUsers() {
 	} catch (error) {
 	}
 }
-getUsers();
+let users = getUsers();
 
 /* Mise en ordre alphabétique */
 function orderList(data) {

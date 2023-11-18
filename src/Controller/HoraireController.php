@@ -24,7 +24,7 @@ class HoraireController extends AbstractController
   }
 
   // New Horaire
-  #[Route('/horaire/*new', name: 'app_horaire_new')]
+  #[Route('/horaire/new', name: 'app_horaire_new')]
   public function new(Request $request, HoraireRepository $repository, ManagerRegistry $doctrine): Response
   {
     $horaire = new Horaire();

@@ -26,6 +26,10 @@ class UserController extends AbstractController
     ]);
   }
 
+  /**
+   * Afficher tous les utilisateurs
+   */
+
   #[Route('/all', name: 'users', methods: ['GET'])]
   public function users(UserRepository $userRepository): JsonResponse
   {
@@ -87,7 +91,8 @@ class UserController extends AbstractController
    * Edit User
    */
   #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
-  public function edit(Request $request, User $user, UserRepository $userRepository, ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher): Response
+  public function edit(Request $request, User $user, UserRepository $userRepository,
+                       ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher): Response
   {
 
     $form = $this->createForm(EditUserType::class, $user);

@@ -1,5 +1,5 @@
 <div class="container-admin">
-	<div class="container-fluid d-flex aign-item-center justify-contentevenly w-100 position-fixed-top">
+	<div class="container-fluid d-flex align-item-center justify-content-evenly w-100 position-fixed-top">
 		<div class="container w-auto d-sm-none burger-admin">
 			<img width="40" class="my-auto" src="{{ asset('assets/images/Header/menu-burger.svg') }}" alt="bouton burger">
 		</div>
@@ -12,23 +12,25 @@
 			</h1>
 		</div>
 	</div>
-
+	
 	<div class="container d-flex justify-content-end align-items-center w-auto">
 		<a href="{{ path('app_logout') }}">
 			<img class="d-md-none" width="30" src="{{ asset('assets/images/Header/logout.svg') }}" alt="">
 		</a>
-		<button type="submit" class="btn btn-danger d-none d-md-block mx-5" onclick="window.location.href='{{ path('app_logout') }}'">Déconnection</button>
+		<button type="submit" class="btn btn-danger d-none d-md-block mx-5" onclick="window.location.href='{{ path('app_logout') }}'">Déconnexion</button>
 	</div>
-</div></div><aside class="container d-inline-flex flex-column p-2 h-100 fs-6 navlat">
-<ul class="nav flex-column align-items-center">
-	<li class="nav-item">
-		<a class="nav-link" aria-current="page" href="{{ path('app_user_index') }}">Salariés</a>
-	</li>
-	{# <li class="nav-item">
-		<a class="nav-link" href="{{ path('app_prestation_index') }}">Prestations</a>
-	</li>
-	<li class="nav-item">
-		<a class="nav-link" href="{{ path('app_horaire') }}">Horaires</a>
-	</li> #}
-</ul></aside>
+</div>
+<aside class="container d-inline-flex flex-column p-2 h-100 fs-6 navlat">
+	<ul class="nav flex-column align-items-center">
+		<li class="nav-item">
+			<a class="nav-link" aria-current="page" href="{{ path('app_user_index') }}">Salariés</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="{{ path('app_prestation_index') }}">Prestations</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="{{ path('app_horaire') }}">Horaires</a>
+		</li>
+	</ul>
+</aside>
 

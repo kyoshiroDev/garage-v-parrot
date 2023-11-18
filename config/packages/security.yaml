@@ -15,10 +15,11 @@ security:
             security: false
         main:
             lazy: true
-            provider: app_user_provider
+
             form_login:
                 login_path: app_login
                 check_path: app_login
+            provider: app_user_provider
 
             pattern: ^/
             user_checker: App\Security\UserChecker
@@ -41,7 +42,7 @@ security:
 
 when@test:
     security:
-        password_hashers: auto
+        password_hashers:
             # By default, password hashers are resource intensive and take time. This is
             # important to generate secure password hashes. In tests however, secure hashes
             # are not important, waste resources and increase test times. The following

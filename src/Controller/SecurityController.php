@@ -12,23 +12,25 @@ interface PasswordAuthenticatedUserInterface
   public function getPassword(): ?string;
 }
 
-
+use App\Form\LoginType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
   #[Route(path: '/login', name: 'app_login', methods: ['GET', 'POST'])]
 
-  public function login(AuthenticationUtils $authenticationUtils): Response
+  public function login(AuthenticationUtils $authenticationUtils, Request $request): Response
   {
-    
-    // get the login error if there is one
     $error = $authenticationUtils->getLastAuthenticationError();
-    // last username entered by the user
     $lastUsername = $authenticationUtils->getLastUsername();
+
+    $form = $this->createForm(LoginType::class);
+    $form->handleRequest($request);
+    $form->isSubmitted() && $form->isValid();
 
     return $this->render('security/login.html.twig', [
       'last_username' => $lastUsername,

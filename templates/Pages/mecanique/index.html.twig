@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block stylesheets %}
-  {{ parent() }} 
+	{{ parent() }}
 {% endblock %}
 
 {% block javascripts %}
@@ -13,7 +13,70 @@
 
 {% block body %}
 	{% include "_part/nav.html.twig" %}
-
+	
+	<h1 class="text-center my-5 text-danger">Entretien véhicule</h1>
+	<div class="card m-auto mt-5 col-md-9 col-lg-6 col-11">
+		<div class="card-body contenu-entretien">
+			<h5 class="card-title text-danger text-center h3">Révision voiture</h5>
+			<p class="card-text h6">La révision de voiture intervient tous les 15 à 20 000 kilomètres,
+				elle est obligatoire à l’entretien de votre véhicule. Chez V.PARROT,
+				nous sommes experts de la révision constructeur.
+				Celle-ci permet d’assurer le fonctionnement de votre véhicule et de garantir votre sécurité
+				tout en préservant la Garantie Constructeur de votre voiture.</p>
+		</div>
+		<img src="{{ asset('assets/images/Entretien véhicule/Révision voiture.jpeg') }}" class="card-img-top p-2 images" alt="revision d'une voiture">
+		<div class="card-body contenu-entretien">
+			<p class="card-text h6 mb-3">Nos techniciens respectent votre plan d’entretien à la lettre et proposent plusieurs forfaits
+				incluant la vidange, le remplacement des filtres à air ou encore le diagnostic de la batterie.
+				Au total, nous contrôlons jusqu’à 135 points
+				pour fournir un entretien mécanique optimal et adapté aux besoins de votre véhicule.</p>
+			<div class="card-text align-items-center m-auto px-3 py-1 border border-danger" style="width: max-content">
+				<h5 class="text-center">CONTACT</h5>
+				<p class="h6 text-center">Par téléphone: 06.85.97.42.35<br>
+				ou via nôtre <a href="" class="text-danger">formulaire</a></p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="card m-auto mt-5 col-md-9 col-lg-6 col-11">
+		<div class="card-body contenu-entretien">
+			<h5 class="card-title text-danger text-center h3">Vidange</h5>
+			<p class="card-text h6">La vidange est indispensable pour entretenir votre voiture.
+				Si elle est négligée, le moteur peut s’encrasser,
+				causant alors des baisses de performance dans la durée et une augmentation de la consommation de carburant.
+				Pour éviter le déclenchement de votre voyant d’huile moteur,
+				nous vous recommandons de procéder au remplacement de l’huile moteur tous les 10 à 30 000 kilomètres
+				en fonction des préconisations du constructeur.</p>
+		</div>
+		<img src="{{ asset('assets/images/Entretien véhicule/Vidange.jpg') }}" class="card-img-top p-2 images" alt="revision d'une voiture">
+		<div class="card-body contenu-entretien">
+			<p class="card-text h6 mb-3 text-center">Nous utilisons les huiles ELF Powertech pour maintenir les bonnes performances de votre voiture.</p>
+			<div class="card-text align-items-center m-auto px-3 py-1 border border-danger" style="width: max-content">
+				<h5 class="text-center">CONTACT</h5>
+				<p class="h6 text-center">Par téléphone: 06.85.97.42.35<br>
+					ou via nôtre <a href="" class="text-danger">formulaire</a></p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="card m-auto mt-5 col-md-9 col-lg-6 col-11 mb-5">
+		<div class="card-body contenu-entretien">
+			<h5 class="card-title text-danger text-center h3">Freinage</h5>
+			<p class="card-text h6">Le contrôle des plaquettes de frein, des disques de frein et du circuit de freinage
+				est indispensable pour un entretien mécanique réussi. N’hésitez pas à nous  contacter si vous constatez
+				des anomalies ou une augmentation de votre distance de freinage.</p>
+		</div>
+		<img src="{{ asset('assets/images/Entretien véhicule/Freinage.png') }}" class="card-img-top p-2 images" alt="revision d'une voiture">
+		<div class="card-body contenu-entretien">
+			<p class="card-text h6 mb-3 text-center">Nos experts détailleront l’état de votre système de freinage et prendront
+				les mesures nécessaires pour assurer votre sécurité.</p>
+			<div class="card-text align-items-center m-auto px-3 py-1 border border-danger" style="width: max-content">
+				<h5 class="text-center">CONTACT</h5>
+				<p class="h6 text-center">Par téléphone: 06.85.97.42.35<br>
+					ou via nôtre <a href="" class="text-danger">formulaire</a></p>
+			</div>
+		</div>
+	</div>
 	{% include "_part/footer.html.twig" %}
 
 {% endblock %}
