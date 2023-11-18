@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:mariadb://127.0.0.1:6666/garage-v-parrot</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="garage-v-parrot-online" uuid="e0a37320-9707-4266-ba5c-fa0cf31a90c4">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://j5zntocs2dn6c3fj.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/uwpgzs1vcelxsueh</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
