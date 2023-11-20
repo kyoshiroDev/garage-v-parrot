@@ -92,7 +92,7 @@ class UserController extends AbstractController
    */
   #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
   public function edit(Request $request, User $user, UserRepository $userRepository,
-                       ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher): Response
+                      ManagerRegistry $doctrine, UserPasswordHasherInterface $passwordHasher): Response
   {
 
     $form = $this->createForm(EditUserType::class, $user);

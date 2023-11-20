@@ -16,10 +16,50 @@
 
 {% block body %}
 	{% include "_part/nav.html.twig" %}
-	<div class="container">
-		{# {% for in  %}
-	
-		{% endfor %} #}
+	<div class="container m-auto">
+
+		<div class="row">
+			{% for vehicule in card_cars %}
+				<div class="card m-3 col-12" style="width: 23rem;">
+
+					{% if vehicule.imageName %}
+						<img src="{{ vich_uploader_asset(vehicule) }}" alt="{{ vehicule.marque }}">
+					{% endif %}
+
+					<div class="card-body m-auto">
+						<h5 class="card-title fs-1">{{ vehicule.marque }}
+							{{ vehicule.model }}</h5>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item d-flex justify-content-between fs-6">
+							<div>Kilomètrage:</div>
+							<div>{{ vehicule.kilometre }}</div>
+						</li>
+						<li class="list-group-item d-flex justify-content-between fs-6">
+							<div>Portes:</div>
+							<div>{{ vehicule.porte }}</div>
+						</li>
+						<li class="list-group-item d-flex justify-content-between fs-6">
+							<div>CV Fiscaux:</div>
+							<div>{{ vehicule.puissance }}</div>
+						</li>
+						<li class="list-group-item d-flex justify-content-between fs-6">
+							<div>Premiére mise en cirdulation:</div>
+							<div>{{ vehicule.annee }}</div>
+						</li>
+						<li class="list-group-item d-flex justify-content-between fs-6">
+							<div>Energie:</div>
+							<div>{{ vehicule.energie }}</div>
+						</li>
+						<li class="list-group-item d-flex justify-content-between fs-6">
+							<div>Prix:</div>
+							<div>{{ vehicule.prix }}
+								&euro;</div>
+						</li>
+					</ul>
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 	{% include "_part/footer.html.twig" %}
 {% endblock %}

@@ -8,7 +8,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\CardCarsRepository;
 use Symfony\Component\Validator\Constraints as Assert;
-use Vich\UploaderBundle\Mapping\Annotation\UploadableField;
 
 #[ORM\Entity(repositoryClass: CardCarsRepository::class)]
 #[Vich\Uploadable]
@@ -19,7 +18,7 @@ class CardCars
   #[ORM\Column]
   private ?int $id = null;
 
-  #[UploadableField(mapping: 'vehicules', fileNameProperty: 'imageName')]
+  #[Vich\UploadableField(mapping: 'vehicules', fileNameProperty: 'imageName')]
   private ?File $imageFile = null;
 
   #[ORM\Column(nullable: true)]

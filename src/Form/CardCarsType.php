@@ -5,8 +5,8 @@ namespace App\Form;
 use App\Entity\CardCars;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CardCarsType extends AbstractType
 {
@@ -16,22 +16,22 @@ class CardCarsType extends AbstractType
       ->add('marque', null, [
         'label' => 'Marque du véhicule',
       ])
-      ->add('model' , null, [
+      ->add('model', null, [
         'label' => 'Modèle du véhicule',
       ])
-      ->add('kilometre' , null, [
+      ->add('kilometre', null, [
         'label' => 'Kilométrage du véhicule',
       ])
-      ->add('porte' , null, [
+      ->add('porte', null, [
         'label' => 'Nombre de portes',
       ])
-      ->add('puissance' , null, [
+      ->add('puissance', null, [
         'label' => 'Puissance du véhicule',
       ])
-      ->add('annee' , null, [
+      ->add('annee', null, [
         'label' => 'Année du véhicule',
       ])
-      ->add('energie' , null, [
+      ->add('energie', null, [
         'label' => 'Energie du véhicule',
       ])
       ->add('prix', null, [
@@ -39,6 +39,7 @@ class CardCarsType extends AbstractType
       ])
       ->add('imageFile', VichImageType::class, [
         'label' => 'Image du véhicule',
+        
       ]);
   }
 

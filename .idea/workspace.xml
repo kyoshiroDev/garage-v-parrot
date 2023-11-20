@@ -5,37 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b82efd5-69a5-4997-8525-b7003baca28f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38/storage_v2/_src_/schema/garage-v-parrot.sxbtKA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeception.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/garage-v-parrot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/garage-v-parrot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CardCarsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CardCarsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OccasionsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OccasionsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/CardCars.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CardCars.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/CardCarsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CardCarsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/EditUserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EditUserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/HorairesType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/HorairesType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/PrestationsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/PrestationsType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/LoginType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/LoginType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Users/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Users/dashboard.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/dashboard.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/card_cars/_delete_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/card_cars/_delete_form.html.twig" afterDir="false" />
@@ -43,10 +25,8 @@
       <change beforePath="$PROJECT_DIR$/templates/card_cars/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/card_cars/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/card_cars/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/card_cars/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/card_cars/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/card_cars/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/prestation/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/prestation/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/occasions/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/occasions/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,11 +235,23 @@
       <workItem from="1700433533131" duration="3714000" />
       <workItem from="1700483867845" duration="9546000" />
       <workItem from="1700493426264" duration="818000" />
-      <workItem from="1700494258249" duration="1450000" />
+      <workItem from="1700494258249" duration="8623000" />
+      <workItem from="1700518023092" duration="177000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

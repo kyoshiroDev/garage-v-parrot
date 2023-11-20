@@ -8,11 +8,14 @@
 		</div>
 		<div class="container-fluid d-flex justify-content-center align-items-center w-100">
 			<h1 class="text-center my-auto">
-				Bonjour {{ app.user.lastName }}
+				Bonjour
+				{{ app.user.firstName }}
+
+
 			</h1>
 		</div>
 	</div>
-	
+
 	<div class="container d-flex justify-content-end align-items-center w-auto">
 		<a href="{{ path('app_logout') }}">
 			<img class="d-md-none" width="30" src="{{ asset('assets/images/Header/logout.svg') }}" alt="">
@@ -33,4 +36,3 @@
 		</li>
 	</ul>
 </aside>
-

@@ -11,27 +11,28 @@
 
 {% block body %}
 
-<div class="container align-items-center w-100">
-	<div class="container align-items-center w-100">
-		<form class="form" method="post" action="{{ path('app_login')}}">
-			<img class="logo" src="{{ asset('assets/images/Header/Logo2.png') }}" alt="Logo de la société">
-			<h3 class="text-center">Connexion</h3>
-			{% if error %}
-				<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-			{% endif %}
-			<div class="mb-3 w-100 h6">
-				<label for="inputEmail" class="form-label">Email</label>
-				<input type="email" class="form-control" id="inputEmail" name="_username" placeholder="example@email.com" value="{{ last_username }}">
-			</div>
-			<div class="mb-3 w-100 h6">
-				<label for="password" class="form-label">Mot de passe</label>
-				<input type="password" class="form-control" id="password" name="_password" placeholder="********">
-			</div>
-			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-			<div class="d-flex justify-content-between w-100">
-				<button type="submit" class="btn">Se connecter</button>
-				<a href="{{ path('app_home') }}" type="submit" class="btn">Retour</a>
-			</div>
-		</form>
-	</div>
-{% endblock %}
+	<div class="container align-items-center m-auto">
+		<div class="container align-items-center w-100">
+			<form class="form" method="post" action="{{ path('app_login')}}">
+				<img class="logo" src="{{ asset('assets/images/Header/Logo2.png') }}" alt="Logo de la société">
+				<h3 class="text-center">Connexion</h3>
+				{% if error %}
+					<div class="alert alert-danger h6">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+				{% endif %}
+				<div class="mb-3 w-100 h6">
+					<label for="inputEmail" class="form-label">Email</label>
+					<input type="email" class="form-control" id="inputEmail" name="_username" placeholder="example@email.com" value="{{ last_username }}">
+
+				</div>
+				<div class="mb-3 w-100 h6">
+					<label for="password" class="form-label">Mot de passe</label>
+					<input type="password" class="form-control" id="password" name="_password" placeholder="********">
+				</div>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<div class="d-flex justify-content-between w-100">
+					<button type="submit" class="btn">Se connecter</button>
+					<a href="{{ path('app_home') }}" type="submit" class="btn">Retour</a>
+				</div>
+			</form>
+		</div>
+	{% endblock %}

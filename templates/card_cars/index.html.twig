@@ -16,55 +16,56 @@
 	{% else %}
 		{% include "Users/dashboard.html.twig" %}
 	{% endif %}
-	<h1 class="text-center m-3">Tableaux des annonces</h1>
-	<div class="container">
-		<div class="d-flex justify-content-end align-items-center pe-3 w-100 mt-4">
-			<a type="button" href="{{ path('app_card_cars_new') }}" class="btn btn-danger text-center" style="width: 150px">
-				Nouveau
-			</a>
+	<main class="w-auto">
+		<h1 class="text-center m-3">Tableau des annonces</h1>
+		<div class="container d-flex flex-column justify-content-center align-items-center sm-px-2 mt-5 main-index">
+			<div class="d-flex justify-content-end align-items-center pe-3 w-100 mt-4">
+				<a type="button" href="{{ path('app_card_cars_new') }}" class="btn btn-danger text-center" style="width: 150px">
+					Nouveau
+				</a>
+			</div>
+			<table class="container table">
+				<thead>
+					<tr class="text-center fs-4 w-25">
+						<th class="d-none">Id</th>
+						<th>Marque</th>
+						<th>Model</th>
+						<th class="d-none d-lg-table-cell">Kilometre</th>
+						<th class="d-none d-xl-table-cell">Porte</th>
+						<th class="d-none d-xl-table-cell">Puissance</th>
+						<th class="d-none d-xl-table-cell">Annee</th>
+						<th class="d-none d-xl-table-cell">Prix</th>
+						<th class="d-none d-xl-table-cell">Energie</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for card_car in card_cars %}
+						<tr class="table-item text-center fs-6 w-25">
+							<td class="d-none">{{ card_car.id }}</td>
+							<td class="align-middle">{{ card_car.marque }}</td>
+							<td class="align-middle">{{ card_car.model }}</td>
+							<td class="align-middle d-none d-lg-table-cell">{{ card_car.kilometre }}</td>
+							<td class="align-middle d-none d-xl-table-cell">{{ card_car.porte }}</td>
+							<td class="align-middle d-none d-xl-table-cell">{{ card_car.puissance }}</td>
+							<td class="align-middle d-none d-xl-table-cell">{{ card_car.annee }}</td>
+							<td class="align-middle d-none d-xl-table-cell">{{ card_car.prix }}</td>
+							<td class="align-middle d-none d-xl-table-cell">{{ card_car.energie }}</td>
+							<td>
+								<div class="btn-group" role="group" aria-label="Basic outlined example">
+									<a href="{{ path('app_card_cars_show', {'id': card_car.id}) }}" class="btn btn-outline-danger">Voir</a>
+									<a href="{{ path('app_card_cars_edit', {'id': card_car.id}) }}" class="btn btn-outline-danger">Modifier</a>
+									{{ include('card_cars/_delete_form.html.twig') }}
+								</div>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="10">no records found</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
 		</div>
-		<table class="table fs-6 border mt-3">
-			<thead class="text-center">
-			<tr>
-				<th>Id</th>
-				<th>Marque</th>
-				<th>Model</th>
-				<th>Kilometre</th>
-				<th>Porte</th>
-				<th>Puissance</th>
-				<th>Annee</th>
-				<th>Prix</th>
-				<th>Energie</th>
-				<th></th>
-			</tr>
-			</thead>
-			<tbody>
-			{% for card_car in card_cars %}
-				<tr class="text-center">
-					<td style="vertical-align: middle;">{{ card_car.id }}</td>
-					<td style="vertical-align: middle;">{{ card_car.marque }}</td>
-					<td style="vertical-align: middle;">{{ card_car.model }}</td>
-					<td style="vertical-align: middle;">{{ card_car.kilometre }}</td>
-					<td style="vertical-align: middle;">{{ card_car.porte }}</td>
-					<td style="vertical-align: middle;">{{ card_car.puissance }}</td>
-					<td style="vertical-align: middle;">{{ card_car.annee }}</td>
-					<td style="vertical-align: middle;">{{ card_car.prix }}</td>
-					<td style="vertical-align: middle;">{{ card_car.energie }}</td>
-					<td>
-						<div class="btn-group" role="group" aria-label="Basic outlined example">
-							<a href="{{ path('app_card_cars_show', {'id': card_car.id}) }}" class="btn btn-outline-danger">Voir</a>
-							<a href="{{ path('app_card_cars_edit', {'id': card_car.id}) }}" class="btn btn-outline-danger">Modifier</a>
-							{{ include('card_cars/_delete_form.html.twig') }}
-						</div>
-					</td>
-				</tr>
-			{% else %}
-				<tr>
-					<td colspan="10">no records found</td>
-				</tr>
-			{% endfor %}
-			</tbody>
-		</table>
-	</div>
-
+	</main>
 {% endblock %}

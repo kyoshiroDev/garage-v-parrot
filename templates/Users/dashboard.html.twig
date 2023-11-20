@@ -8,7 +8,9 @@
 		</div>
 		<div class="container-fluid d-flex justify-content-center align-items-center w-100">
 			<h1 class="text-center my-auto">
-				Bonjour {{ app.user.lastName }} {{ app.user.firstName }}
+				Bonjour
+				{{ app.user.firstName }}
+
 			</h1>
 		</div>
 	</div>
@@ -21,10 +23,9 @@
 	</div>
 </div>
 <aside class="container d-inline-flex flex-column p-2 h-100 fs-6 navlat">
-<ul class="nav flex-column align-items-center">
-	<li class="nav-item">
-		<a class="nav-link" aria-current="page" href="{{ path('app_card_cars_index') }}">Occasions</a>
-	</li>
-</ul>
+	<ul class="nav flex-column align-items-center">
+		<li class="nav-item">
+			<a class="nav-link" aria-current="page" href="{{ path('app_card_cars_index') }}">Occasions</a>
+		</li>
+	</ul>
 </aside>
-
