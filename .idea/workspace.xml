@@ -12,7 +12,9 @@
   </component>
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -215,7 +217,7 @@
       <workItem from="1700493426264" duration="818000" />
       <workItem from="1700494258249" duration="8623000" />
       <workItem from="1700518023092" duration="177000" />
-      <workItem from="1700520775790" duration="2379000" />
+      <workItem from="1700520775790" duration="2753000" />
     </task>
     <servers />
   </component>
