@@ -12,27 +12,30 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class EditUserType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
-        $builder
-            ->add('lastName', TextType::class, ["label" => "Nom"])
-            ->add('firstName', TextType::class, ["label" => "Prenom"])
-            ->add('email', EmailType::class, ["label" => "Email"])
-            ->add('roles', ChoiceType::class, [
-              'choices' => [
-                  'Utilisateur' => 'ROLE_USER',
-                  'Administrateur' => 'ROLE_ADMIN',
-              ],
-              'expanded' => true,
-              'multiple' => true,
-              'label' => 'Rôles',
-          ]);
-    }
+  public function buildForm(FormBuilderInterface $builder, array $options): void
+  {
+    $builder
+      ->add('lastName', TextType::class, ["label" => "Nom"])
+      ->add('firstName', TextType::class, ["label" => "Prenom"])
+      ->add('email', EmailType::class, ["label" => "Email"])
+      ->add('roles', ChoiceType::class, [
+        'choices' => [
+          'Utilisateur' => 'ROLE_USER',
+          'Administrateur' => 'ROLE_ADMIN',
+        ],
+        'expanded' => true,
+        'multiple' => true,
+        'label' => 'Rôles',
+      ]);
+  }
 
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            'data_class' => User::class,
-        ]);
-    }
+  public function configureOptions(OptionsResolver $resolver): void
+  {
+    $resolver->setDefaults([
+      'data_class' => User::class,
+      'csrf_protection' => true,
+      'csrf_field_name' => '_token',
+      'csrf_token_id'   => 'user_item',
+    ]);
+  }
 }

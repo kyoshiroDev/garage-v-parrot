@@ -8,45 +8,48 @@
 {% endblock %}
 
 {% block javascripts %}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+					integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+					crossorigin="anonymous" defer></script>
 {% endblock %}
 
 {% block body %}
-
+	
 	{% include "_part/nav.html.twig" %}
-
+	
 	<div class="d-flex flex-wrap align-item-center justify-content-center">
-
+		
 		<div class="card m-3" style="width: 23rem;">
-			<img src="{{ asset('assets/images/Occasions/renault-clio.jpg') }}" class="card-img-top" alt="...">
+			<img src="{{ vich_uploader_asset(card_car) }}" alt="{{ card_car.imageFile }}">
+			
 			<div class="card-body m-auto">
-				<h5 class="card-title fs-1">{{ marque }}
-					{{ model }}</h5>
+				<h5 class="card-title fs-1">{{ card_car.marque }}
+					{{ card_car.model }}</h5>
 			</div>
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item d-flex justify-content-between fs-6">
 					<div>Kilomètrage:</div>
-					<div>{{ kilo }}</div>
+					<div>{{ card_car.kilometre }}</div>
 				</li>
 				<li class="list-group-item d-flex justify-content-between fs-6">
 					<div>Portes:</div>
-					<div>{{ porte }}</div>
+					<div>{{ card_car.porte }}</div>
 				</li>
 				<li class="list-group-item d-flex justify-content-between fs-6">
 					<div>CV Fiscaux:</div>
-					<div>{{ puissance }}</div>
+					<div>{{ card_car.puissance }}</div>
 				</li>
 				<li class="list-group-item d-flex justify-content-between fs-6">
 					<div>Premiére mise en cirdulation:</div>
-					<div>{{ annee }}</div>
+					<div>{{ card_car.annee }}</div>
 				</li>
 				<li class="list-group-item d-flex justify-content-between fs-6">
 					<div>Energie:</div>
-					<div>{{ energie }}</div>
+					<div>{{ card_car.energie }}</div>
 				</li>
 				<li class="list-group-item d-flex justify-content-between fs-6">
 					<div>Prix:</div>
-					<div>{{ prix }}
+					<div>{{ card_car.prix }}
 						&euro;</div>
 				</li>
 			</ul>
@@ -60,15 +63,9 @@
 						formulaire</a>
 				</p>
 				<div class="btn-group py-2" role="group" aria-label="Basic outlined example">
-					<button type="button" class="btn btn-outline-danger">
-						<div class="d-flex justify-content-between align-items-center fs-6 p-2">
-							<a class="text-danger" href="{{ path('app_card_cars_index') }}">Retour a la liste</a>
-						</div>
-					</button>
-					<button type="button" class="btn btn-outline-danger">
-						<a href="{{ path('app_card_cars_edit', {'id': cardCar.id}) }}"></a>Modifier</button>
-					<button type="button" class="btn btn-outline-danger">
-						<a href="{{ path('app_card_cars_delete', {'id': cardCar.id}) }}"></a>Supprimer</button>
+					<a href="{{ path('app_card_cars_index') }}" class="btn btn-outline-danger">Retour a la liste</a>
+					<a href="{{ path('app_card_cars_edit', {'id': card_car.id}) }}" class="btn btn-outline-danger">Modifier</a>
+					{{ include('card_cars/_delete_form.html.twig') }}
 				</div>
 			</div>
 		</div>

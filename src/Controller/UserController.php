@@ -119,7 +119,7 @@ class UserController extends AbstractController
 
     return $this->render('user/edit.html.twig', [
       'user' => $user,
-      'form' => $form,
+      'form' => $form->createView(),
     ]);
   }
 
@@ -146,6 +146,7 @@ class UserController extends AbstractController
   #[Route('/{id}', name: 'show', methods: ['GET'])]
   public function show(User $user): Response
   {
+
     return $this->render('user/show.html.twig', [
       'user' => $user,
     ]);

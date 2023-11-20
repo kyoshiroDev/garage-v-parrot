@@ -22,6 +22,7 @@
 				<h1 class="text-center my-5">Ajout d'une prestation</h1>
 				{{ form_start(form) }}
 				{{ form_row(form.prestations)}}
+				<input type="hidden" name="token" value="{{ csrf_token('prestations') }}">
 				<div class="button-container">
 					<input type="submit" value="Envoyer" class="btn btn-success m-1 button"></input>
 					<button type="button" class="btn btn-danger m-1 button" onclick="window.location.href='{{ path('app_prestation_index') }}'">Annuler</button>

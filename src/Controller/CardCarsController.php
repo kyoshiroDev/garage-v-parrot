@@ -42,7 +42,7 @@ class CardCarsController extends AbstractController
 
     return $this->render('card_cars/new.html.twig', [
       'card_car' => $cardCar,
-      'form' => $form,
+      'form' => $form->createView()
     ]);
   }
 
@@ -68,7 +68,7 @@ class CardCarsController extends AbstractController
   }
 
   // Delete CardCars
-  #[Route('/{id}', name: 'delete', methods: ['POST'])]
+  #[Route('/{id}/', name: 'delete', methods: ['POST'])]
   public function delete(Request $request, CardCars $cardCar, CardCarsRepository $cardCarsRepository, ManagerRegistry $doctrine): Response
   {
     if ($this->isCsrfTokenValid('delete' . $cardCar->getId(), $request->request->get('_token'))) {
@@ -85,27 +85,8 @@ class CardCarsController extends AbstractController
   #[Route('/{id}', name: 'show', methods: ['GET'])]
   public function show(CardCars $cardCar): Response
   {
-    $id = $cardCar->getId();
-    $marque = $cardCar->getMarque();
-    $model = $cardCar->getModel();
-    $kilo = $cardCar->getKilometre();
-    $porte = $cardCar->getPorte();
-    $puissance = $cardCar->getPuissance();
-    $annee = $cardCar->getAnnee();
-    $energie = $cardCar->getEnergie();
-    $prix = $cardCar->getPrix();
-
     return $this->render('card_cars/show.html.twig', [
-      'cardCar' => $cardCar,
-      'id' => $id,
-      'marque' => $marque,
-      'model' => $model,
-      'kilo' => $kilo,
-      'porte' => $porte,
-      'puissance' => $puissance,
-      'annee' => $annee,
-      'energie' => $energie,
-      'prix' => $prix,
+      'card_car' => $cardCar
     ]);
   }
 }

@@ -1,0 +1,11 @@
+vich_uploader:
+    db_driver: orm
+
+    metadata:
+        type: attribute
+
+    mappings:
+        vehicules:
+            uri_prefix: /images/vehicules
+            upload_destination: '%kernel.project_dir%/public/assets/images/vehicules'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

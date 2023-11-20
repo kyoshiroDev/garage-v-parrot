@@ -1,68 +1,68 @@
 {% extends "base.html.twig" %}
 {% block stylesheets %}
 	{{ parent() }}
-  <link rel="stylesheet" href="{{ asset('assets/css/User/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/User/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('assets/css/NavBarAdmin/style.css') }}">
 {% endblock %}
 
 {% block javascripts %}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous" defer></script>
 	<script src="{{ asset('assets/js/NavAdmin/script.js') }}" defer></script>
 {% endblock %}
 
 {% block body %}
-	{% include "Users/dashboard.html.twig" %}
+	{% if is_granted("ROLE_ADMIN") %}
+		{% include "admin/dashboard.html.twig" %}
+	{% else %}
+		{% include "Users/dashboard.html.twig" %}
+	{% endif %}
 	<h1 class="text-center m-3">Tableaux des annonces</h1>
 	<div class="container">
 		<div class="d-flex justify-content-end align-items-center pe-3 w-100 mt-4">
-			<button type="button" onclick="window.location.href = '{{ path('app_user_new') }}'" class="btn btn-danger text-center" style="width: 150px">
+			<a type="button" href="{{ path('app_card_cars_new') }}" class="btn btn-danger text-center" style="width: 150px">
 				Nouveau
-			</button>
+			</a>
 		</div>
 		<table class="table fs-6 border mt-3">
 			<thead class="text-center">
-				<tr>
-					<th>Id</th>
-					<th>Marque</th>
-					<th>Model</th>
-					<th>Kilometre</th>
-					<th>Porte</th>
-					<th>Puissance</th>
-					<th>Annee</th>
-					<th>Prix</th>
-					<th>Energie</th>
-					<th></th>
-				</tr>
+			<tr>
+				<th>Id</th>
+				<th>Marque</th>
+				<th>Model</th>
+				<th>Kilometre</th>
+				<th>Porte</th>
+				<th>Puissance</th>
+				<th>Annee</th>
+				<th>Prix</th>
+				<th>Energie</th>
+				<th></th>
+			</tr>
 			</thead>
 			<tbody>
-				{% for card_car in card_cars %}
-					<tr class="text-center">
-						<td style="vertical-align: middle;">{{ card_car.id }}</td>
-						<td style="vertical-align: middle;">{{ card_car.marque }}</td>
-						<td style="vertical-align: middle;">{{ card_car.model }}</td>
-						<td style="vertical-align: middle;">{{ card_car.kilometre }}</td>
-						<td style="vertical-align: middle;">{{ card_car.porte }}</td>
-						<td style="vertical-align: middle;">{{ card_car.puissance }}</td>
-						<td style="vertical-align: middle;">{{ card_car.annee }}</td>
-						<td style="vertical-align: middle;">{{ card_car.prix }}</td>
-						<td style="vertical-align: middle;">{{ card_car.energie }}</td>
-						<td>
-							<div class="btn-group" role="group" aria-label="Basic outlined example">
-								<button type="button" class="btn btn-outline-danger">
-									<a href="{{ path('app_card_cars_show', {'id': card_car.id}) }}">Voir</a>
-								</button>
-								<button type="button" class="btn btn-outline-danger">
-									<a href="{{ path('app_card_cars_edit', {'id': card_car.id}) }}"></a>Modifier</button>
-								<button type="button" class="btn btn-outline-danger">
-									<a href="{{ path('app_card_cars_delete', {'id': card_car.id}) }}"></a>Supprimer</button>
-							</div>
-						</td>
-					</tr>
-				{% else %}
-					<tr>
-						<td colspan="10">no records found</td>
-					</tr>
-				{% endfor %}
+			{% for card_car in card_cars %}
+				<tr class="text-center">
+					<td style="vertical-align: middle;">{{ card_car.id }}</td>
+					<td style="vertical-align: middle;">{{ card_car.marque }}</td>
+					<td style="vertical-align: middle;">{{ card_car.model }}</td>
+					<td style="vertical-align: middle;">{{ card_car.kilometre }}</td>
+					<td style="vertical-align: middle;">{{ card_car.porte }}</td>
+					<td style="vertical-align: middle;">{{ card_car.puissance }}</td>
+					<td style="vertical-align: middle;">{{ card_car.annee }}</td>
+					<td style="vertical-align: middle;">{{ card_car.prix }}</td>
+					<td style="vertical-align: middle;">{{ card_car.energie }}</td>
+					<td>
+						<div class="btn-group" role="group" aria-label="Basic outlined example">
+							<a href="{{ path('app_card_cars_show', {'id': card_car.id}) }}" class="btn btn-outline-danger">Voir</a>
+							<a href="{{ path('app_card_cars_edit', {'id': card_car.id}) }}" class="btn btn-outline-danger">Modifier</a>
+							{{ include('card_cars/_delete_form.html.twig') }}
+						</div>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="10">no records found</td>
+				</tr>
+			{% endfor %}
 			</tbody>
 		</table>
 	</div>

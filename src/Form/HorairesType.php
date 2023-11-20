@@ -12,44 +12,47 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class HorairesType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
-        $builder
-            ->add('jours', TextType::class, [
-              'attr' => [
-                'class' => 'form-control'
-              ],
-              'label' => 'Jours',
-              'label_attr' => [
-                'class' => 'form-label'
-              ],
-              'constraints' => [
-                new Assert\NotBlank([
-                ]),
-                new Assert\Length(['min' => 3,'max' => 10])
-              ]
-            ])
-            ->add('heures', TextType::class, [
-              'attr' => [
-                'class' => 'form-control'
-              ],
-              'label' => 'Heures',
-              'label_attr' => [
-                'class' => 'form-label'
-              ],
-              'constraints' => [
-                new Assert\NotBlank([
-                ]),
-                new Assert\Length(['min' => 3,'max' => 30])
-              ]
-            ])
-        ;
-    }
+  public function buildForm(FormBuilderInterface $builder, array $options): void
+  {
+    $builder
+      ->add('jours', TextType::class, [
+        'attr' => [
+          'class' => 'form-control'
+        ],
+        'label' => 'Jours',
+        'label_attr' => [
+          'class' => 'form-label'
+        ],
+        'constraints' => [
+          new Assert\NotBlank([
+          ]),
+          new Assert\Length(['min' => 3,'max' => 10])
+        ]
+      ])
+      ->add('heures', TextType::class, [
+        'attr' => [
+          'class' => 'form-control'
+        ],
+        'label' => 'Heures',
+        'label_attr' => [
+          'class' => 'form-label'
+        ],
+        'constraints' => [
+          new Assert\NotBlank([
+          ]),
+          new Assert\Length(['min' => 3,'max' => 30])
+        ]
+      ])
+    ;
+  }
 
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
-            'data_class' => Horaire::class,
-        ]);
-    }
+  public function configureOptions(OptionsResolver $resolver): void
+  {
+    $resolver->setDefaults([
+      'data_class' => Horaire::class,
+      'csrf_protection' => true,
+      'csrf_field_name' => '_token',
+      'csrf_token_id'   => 'user_item',
+    ]);
+  }
 }
