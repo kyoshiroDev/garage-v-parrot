@@ -15,5 +15,19 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
+    <data-source name="garage-v-parrot distant" uuid="f8792ef4-584b-48b7-a34b-bdd42ad7eea2">
+      <database-info product="MariaDB" version="10.4.30-MariaDB-log" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.0.7" dbms="MARIADB" exact-version="10.4.30" exact-driver-version="3.0">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>dcp9g3dv3lle3ffy</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="@" />
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
   </component>
 </project>
