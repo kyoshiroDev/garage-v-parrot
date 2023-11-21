@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b82efd5-69a5-4997-8525-b7003baca28f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f8792ef4-584b-48b7-a34b-bdd42ad7eea2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f8792ef4-584b-48b7-a34b-bdd42ad7eea2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f8792ef4-584b-48b7-a34b-bdd42ad7eea2/storage_v2/_src_/schema/uwpgzs1vcelxsueh.6rhtFQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f8792ef4-584b-48b7-a34b-bdd42ad7eea2/storage_v2/_src_/schema/uwpgzs1vcelxsueh.6rhtFQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +189,7 @@
     "TYPO3XliffPathToExtensionLanguageFiles": "Resources/Private/Language/",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/greg/Téléchargements/card_cars (1).sql",
+    "last_opened_file_path": "/home/greg/Téléchargements/card_cars (2).sql",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -219,7 +222,7 @@
       <workItem from="1700493426264" duration="818000" />
       <workItem from="1700494258249" duration="8623000" />
       <workItem from="1700518023092" duration="177000" />
-      <workItem from="1700520775790" duration="4777000" />
+      <workItem from="1700520775790" duration="5472000" />
     </task>
     <servers />
   </component>

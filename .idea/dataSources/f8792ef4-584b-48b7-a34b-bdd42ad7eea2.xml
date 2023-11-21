@@ -1035,8 +1035,8 @@ uwpgzs1vcelxsueh|schema||dcp9g3dv3lle3ffy||UPDATE|G</Grants>
     </schema>
     <schema id="325" parent="1" name="uwpgzs1vcelxsueh">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-11-21.00:20:07</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-20.23:20:07</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-21.01:19:06</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-21.00:19:06</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </schema>
     <user id="326" parent="1" name="dcp9g3dv3lle3ffy"/>
@@ -1115,6 +1115,7 @@ uwpgzs1vcelxsueh|schema||dcp9g3dv3lle3ffy||UPDATE|G</Grants>
       <Position>10</Position>
     </column>
     <column id="343" parent="327" name="updated_at">
+      <Comment>(DC2Type:datetime_immutable)</Comment>
       <DasType>datetime|0s</DasType>
       <Position>11</Position>
     </column>
