@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b82efd5-69a5-4997-8525-b7003baca28f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38/storage_v2/_src_/schema/garage-v-parrot.sxbtKA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38/storage_v2/_src_/schema/garage-v-parrot.sxbtKA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f8792ef4-584b-48b7-a34b-bdd42ad7eea2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f8792ef4-584b-48b7-a34b-bdd42ad7eea2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/Login/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/Login/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +229,7 @@
       <workItem from="1700494258249" duration="8623000" />
       <workItem from="1700518023092" duration="177000" />
       <workItem from="1700520775790" duration="5472000" />
-      <workItem from="1714298639759" duration="8214000" />
+      <workItem from="1714298639759" duration="9443000" />
     </task>
     <servers />
   </component>
