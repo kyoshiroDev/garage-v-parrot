@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="PS-232.10072.32">
+  <component name="dataSourceStorageLocal" created-in="PS-241.15989.102">
     <data-source name="garage-v-parrot@localhost" uuid="3983bf7e-2cbf-46b0-a958-ebfaebc50e38">
       <database-info product="MariaDB" version="10.6.14-MariaDB-1:10.6.14+maria~ubu2004" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.0.7" dbms="MARIADB" exact-version="10.6.14" exact-driver-version="3.0">
         <extra-name-characters>#@</extra-name-characters>
@@ -16,7 +16,7 @@
       </schema-mapping>
     </data-source>
     <data-source name="garage-v-parrot distant" uuid="f8792ef4-584b-48b7-a34b-bdd42ad7eea2">
-      <database-info product="MariaDB" version="10.4.30-MariaDB-log" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.0.7" dbms="MARIADB" exact-version="10.4.30" exact-driver-version="3.0">
+      <database-info product="MariaDB" version="10.4.32-MariaDB-log" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="3.0.7" dbms="MARIADB" exact-version="10.4.32" exact-driver-version="3.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>

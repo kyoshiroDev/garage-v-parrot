@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="garage-v-parrot@localhost">
-  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.49">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.52">
     <root id="1">
       <DefaultCasing>exact</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1092,8 +1092,7 @@
     </collation>
     <schema id="324" parent="1" name="garage-v-parrot">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-11-21.00:22:27</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-20.23:22:26</LocalIntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-04-28.12:17:35</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="325" parent="1" name="information_schema">
@@ -1149,7 +1148,7 @@
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
     <column id="341" parent="335" name="id">
-      <AutoIncrement>21</AutoIncrement>
+      <AutoIncrement>6</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1343,66 +1342,60 @@
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <check id="380" parent="340" name="roles">
-      <ColNames>roles</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Predicate>json_valid(`roles`)</Predicate>
-    </check>
-    <column id="381" parent="340" name="id">
-      <AutoIncrement>237</AutoIncrement>
+    <column id="380" parent="340" name="id">
+      <AutoIncrement>93</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="382" parent="340" name="email">
+    <column id="381" parent="340" name="email">
       <DasType>varchar(180)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="383" parent="340" name="roles">
+    <column id="382" parent="340" name="roles">
       <Comment>(DC2Type:json)</Comment>
       <DasType>longtext|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <CollationName>utf8mb4_bin</CollationName>
     </column>
-    <column id="384" parent="340" name="password">
+    <column id="383" parent="340" name="password">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="385" parent="340" name="created_at">
+    <column id="384" parent="340" name="created_at">
       <Comment>(DC2Type:datetime_immutable)</Comment>
       <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="386" parent="340" name="last_name">
+    <column id="385" parent="340" name="last_name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="387" parent="340" name="first_name">
+    <column id="386" parent="340" name="first_name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <index id="388" parent="340" name="PRIMARY">
+    <index id="387" parent="340" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="389" parent="340" name="UNIQ_8D93D649E7927C74">
+    <index id="388" parent="340" name="UNIQ_8D93D649E7927C74">
       <ColNames>email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="390" parent="340" name="PRIMARY">
+    <key id="389" parent="340" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="391" parent="340" name="UNIQ_8D93D649E7927C74">
+    <key id="390" parent="340" name="UNIQ_8D93D649E7927C74">
       <UnderlyingIndexName>UNIQ_8D93D649E7927C74</UnderlyingIndexName>
     </key>
   </database-model>

@@ -3,7 +3,7 @@ version: '3'
 services:
   database:
     image: mariadb:10.6.14-focal
-    container_name: garage-v-parrot-database
+    container_name: garage-v-parrot-db
     restart: always
     ports:
       - '6666:3306'
@@ -11,7 +11,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: garage-v-parrot
     volumes:
-      - ./data:/var/lib/mysql
+      - ./data:/data/db
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -27,10 +27,4 @@ services:
       PMA_PASSWORD: root
       PHP_INI_UPLOAD_MAX_FILESIZE: 100M
       PHP_INI_POST_MAX_SIZE: 100M
-  
-  mailer:
-    image: schickling/mailcatcher
-    container_name: garage-v-parrot-mailer
-    ports:
-      - '5880:1080'
-      - '5025:1025'
+

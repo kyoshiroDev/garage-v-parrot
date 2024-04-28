@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b82efd5-69a5-4997-8525-b7003baca28f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env.dev" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38/storage_v2/_src_/schema/garage-v-parrot.sxbtKA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3983bf7e-2cbf-46b0-a958-ebfaebc50e38/storage_v2/_src_/schema/garage-v-parrot.sxbtKA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f8792ef4-584b-48b7-a34b-bdd42ad7eea2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f8792ef4-584b-48b7-a34b-bdd42ad7eea2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f8792ef4-584b-48b7-a34b-bdd42ad7eea2/storage_v2/_src_/schema/uwpgzs1vcelxsueh.6rhtFQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f8792ef4-584b-48b7-a34b-bdd42ad7eea2/storage_v2/_src_/schema/uwpgzs1vcelxsueh.6rhtFQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/Login/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/Login/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,41 +184,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "AutoIdentifyTypo3Version": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TYPO3AuthorEmailAddress": "myname@example.org",
-    "TYPO3AuthorName": "My Name",
-    "TYPO3PathToExtensionDomainModels": "Classes/Domain/Model/",
-    "TYPO3PathToLocalExtensions": "typo3conf/ext/",
-    "TYPO3PathToSystemExtensions": "typo3/sysext/",
-    "TYPO3ProjectConfigured": "true",
-    "TYPO3Version": "None",
-    "TYPO3XliffLanguages": "af:Afrikaans;\nar:Arabic;\nbs:Bosnian;\nbg:Bulgarian;\nca:Catalan;\nch:Chinese (Simpl.);\ncs:Czech;\nda:Danish;\nde:German;\nel:Greek;\neo:Esperanto;\nes:Spanish;\net:Estonian;\neu:Basque;\nfa:Persian;\nfi:Finnish;\nfo:Faroese;\nfr:French;\nfr_CA:French (Canada);\ngl:Galician;\nhe:Hebrew;\nhi:Hindi;\nhr:Croatian;\nhu:Hungarian;\nis:Icelandic;\nit:Italian;\nja:Japanese;\nka:Georgian;\nkl:Greenlandic;\nkm:Khmer;\nko:Korean;\nlt:Lithuanian;\nlv:Latvian;\nms:Malay;\nnl:Dutch;\nno:Norwegian;\npl:Polish;\npt:Portuguese;\npt_BR:Brazilian Portuguese;\nro:Romanian;\nru:Russian;\nsk:Slovak;\nsl:Slovenian;\nsq:Albanian;\nsr:Serbian;\nsv:Swedish;\nth:Thai;\ntr:Turkish;\nuk:Ukrainian;\nvi:Vietnamese;\nzh:Chinese (Trad.)",
-    "TYPO3XliffPathToExtensionLanguageFiles": "Resources/Private/Language/",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/greg/Téléchargements/card_cars (2).sql",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;AutoIdentifyTypo3Version&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TYPO3AuthorEmailAddress&quot;: &quot;myname@example.org&quot;,
+    &quot;TYPO3AuthorName&quot;: &quot;My Name&quot;,
+    &quot;TYPO3PathToExtensionDomainModels&quot;: &quot;Classes/Domain/Model/&quot;,
+    &quot;TYPO3PathToLocalExtensions&quot;: &quot;typo3conf/ext/&quot;,
+    &quot;TYPO3PathToSystemExtensions&quot;: &quot;typo3/sysext/&quot;,
+    &quot;TYPO3ProjectConfigured&quot;: &quot;true&quot;,
+    &quot;TYPO3Version&quot;: &quot;None&quot;,
+    &quot;TYPO3XliffLanguages&quot;: &quot;af:Afrikaans;\nar:Arabic;\nbs:Bosnian;\nbg:Bulgarian;\nca:Catalan;\nch:Chinese (Simpl.);\ncs:Czech;\nda:Danish;\nde:German;\nel:Greek;\neo:Esperanto;\nes:Spanish;\net:Estonian;\neu:Basque;\nfa:Persian;\nfi:Finnish;\nfo:Faroese;\nfr:French;\nfr_CA:French (Canada);\ngl:Galician;\nhe:Hebrew;\nhi:Hindi;\nhr:Croatian;\nhu:Hungarian;\nis:Icelandic;\nit:Italian;\nja:Japanese;\nka:Georgian;\nkl:Greenlandic;\nkm:Khmer;\nko:Korean;\nlt:Lithuanian;\nlv:Latvian;\nms:Malay;\nnl:Dutch;\nno:Norwegian;\npl:Polish;\npt:Portuguese;\npt_BR:Brazilian Portuguese;\nro:Romanian;\nru:Russian;\nsk:Slovak;\nsl:Slovenian;\nsq:Albanian;\nsr:Serbian;\nsv:Swedish;\nth:Thai;\ntr:Turkish;\nuk:Ukrainian;\nvi:Vietnamese;\nzh:Chinese (Trad.)&quot;,
+    &quot;TYPO3XliffPathToExtensionLanguageFiles&quot;: &quot;Resources/Private/Language/&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/greg/Téléchargements/card_cars (2).sql&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" scope="XML" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PS-241.15989.102" />
+        <option value="bundled-php-predefined-ba97393d7c68-c76157a7178b-com.jetbrains.php.sharedIndexes-PS-241.15989.102" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -223,6 +242,7 @@
       <workItem from="1700494258249" duration="8623000" />
       <workItem from="1700518023092" duration="177000" />
       <workItem from="1700520775790" duration="5472000" />
+      <workItem from="1714298639759" duration="8214000" />
     </task>
     <servers />
   </component>
