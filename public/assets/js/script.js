@@ -1,4 +1,4 @@
-const burger = document.querySelector(".ligne");
+const burger = document.querySelector(".burger");
 const navBar = document.querySelector("nav");
 
 burger.addEventListener("click", () => {
