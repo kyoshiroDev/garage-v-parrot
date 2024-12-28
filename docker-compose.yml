@@ -1,19 +1,19 @@
 services:
-  # app:
-  #   build:
-  #     context: . # Répertoire de construction, ici le répertoire courant
-  #     dockerfile: Dockerfile # Nom du fichier Dockerfile utilisé pour construire l'image
-  #   container_name: garage-vparrot # Nom du conteneur pour l'application
-  #   environment: # Variables d'environnement pour l'application
-  #     - DATABASE_URL=postgresql://kyoshiro:Devilmaycry91770.@db:5432/garage-vparrot # URL de connexion à la base de données PostgreSQL
-  #     - NEXT_PUBLIC_API_URL=http://localhost:3000 # URL publique de l'API pour le front-end Next.js
-  #   ports:
-  #     - '3000:3000' # Redirige le port 3000 du conteneur vers le port 3000 de l'hôte
-  #   volumes:
-  #     - .:/app # Monte le répertoire de travail local dans le conteneur pour un développement interactif
-  #     - /app/node_modules # Évite que node_modules de l'hôte entre en conflit avec ceux du conteneur
-  #   depends_on:
-  #     - db # Assure que le service `db` (PostgreSQL) est démarré avant `app`
+  app:
+    build:
+      context: . # Répertoire de construction, ici le répertoire courant
+      dockerfile: Dockerfile # Nom du fichier Dockerfile utilisé pour construire l'image
+    container_name: garage-vparrot # Nom du conteneur pour l'application
+    environment: # Variables d'environnement pour l'application
+      - DATABASE_URL=postgresql://kyoshiro:Devilmaycry91770.@db:5432/garage-vparrot # URL de connexion à la base de données PostgreSQL
+      - NEXT_PUBLIC_API_URL=http://localhost:3000 # URL publique de l'API pour le front-end Next.js
+    ports:
+      - "3000:3000" # Redirige le port 3000 du conteneur vers le port 3000 de l'hôte
+    volumes:
+      - .:/app # Monte le répertoire de travail local dans le conteneur pour un développement interactif
+      - /app/node_modules # Évite que node_modules de l'hôte entre en conflit avec ceux du conteneur
+    depends_on:
+      - db # Assure que le service `db` (PostgreSQL) est démarré avant `app`
 
   db:
     image: postgres:13 # Utilise l'image officielle de PostgreSQL version 13
