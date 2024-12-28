@@ -1,23 +1,34 @@
-# Base image
-FROM node:20-alpine
+# Étape 1 : Construire l'application
+FROM node:18 AS builder
 
-# Set working directory
+# Définir le répertoire de travail
 WORKDIR /app
 
-# Copy package files
-COPY package.json package-lock.json ./
+# Copier les fichiers nécessaires pour installer les dépendances
+COPY package*.json ./
+COPY src ./src
+COPY public ./public
 
-# Install dependencies
+# Installer les dépendances et construire l'application
 RUN npm install
+RUN npm run build
 
-# Copy the rest of the app files
-COPY . .
+# Étape 2 : Configurer l'image finale
+FROM node:18
 
-# Build the app
-# RUN npm run build
+# Définir le répertoire de travail
+WORKDIR /app
 
-# Expose the port
+# Copier les fichiers nécessaires depuis l'étape de construction
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY package*.json ./
+
+# Installer uniquement les dépendances de production
+RUN npm install --only=production
+
+# Exposer le port utilisé par Next.js
 EXPOSE 3000
 
-# Start the application
-CMD ["npm", "start"]
+# Lancer l'application
+CMD ["npm", "run", "start"]
