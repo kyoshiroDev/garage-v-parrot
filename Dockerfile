@@ -2,7 +2,7 @@
 FROM node:22-alpine
 
 # Définir le répertoire de travail
-WORKDIR /src
+WORKDIR /app
 
 # Copier seulement package.json et package-lock.json pour installer les dépendances
 COPY package*.json ./
@@ -14,10 +14,10 @@ RUN npm install
 COPY . .
 
 # Build l'application
-# RUN npm run build
+RUN npm run build
 
 # Exposer le port sur lequel Next.js va écouter
 EXPOSE 3000
 
 # Commande pour démarrer l'application
-CMD ["npm", "run", "start"]
+CMD ["npm", "start"]
