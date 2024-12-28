@@ -8,7 +8,6 @@ export default async function FicheVehicule({
 }: {
 	vehicules: Cars[];
 }) {
-	console.log(vehicules);
 	return (
 		<>
 			{vehicules.map((vehicule) => (
