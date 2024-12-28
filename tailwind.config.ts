@@ -1,18 +1,21 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
-  },
-  plugins: [],
+	darkMode: ["class"],
+	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+	theme: {
+		extend: {
+			colors: {
+				garage: {
+					red: "#D92332",
+					"red-hover": "#AA202B",
+				},
+			},
+			fontFamily: {
+				sans: ["var(--font-barlow)"],
+				serif: ["var(--font-prata)"],
+			},
+		},
+	},
+	plugins: [],
 } satisfies Config;
