@@ -1,5 +1,5 @@
 # Utiliser l'image de base Node.js
-FROM node:20-alpine
+FROM node:22-alpine
 
 # Définir le répertoire de travail
 WORKDIR /src
@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 3000
 
 # Commande pour démarrer l'application
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
