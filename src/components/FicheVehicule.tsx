@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Cars } from "@prisma/client";
+import { VehiculeInterface } from "@/lib/interfaces";
+//import { Cars } from "@prisma/client";
 
 export default async function FicheVehicule({
 	vehicules,
 }: {
-	vehicules: Cars[];
+	vehicules: VehiculeInterface[];
 }) {
 	console.log(vehicules);
 	return (

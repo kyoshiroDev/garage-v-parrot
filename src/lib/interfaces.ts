@@ -25,3 +25,16 @@ export interface AvisClientInterface {
 	content: string;
 }
 
+export interface VehiculeInterface {
+  id: number;
+	image: string;
+	marque: string;
+	model: string;
+	kilometrage: number;
+	portes: number;
+	puissance: number;
+	date: number;
+	energie: string;
+	prix: number;
+}
+
